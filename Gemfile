@@ -3,6 +3,7 @@ source :rubygems
 gem "rails", "3.2.2"
 
 gem "jquery-rails"
+gem "haml-rails"
 
 group :assets do
   gem "sass-rails",   "~> 3.2.3"
