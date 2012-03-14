@@ -6,4 +6,12 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    = yield
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          %a.brand{ :href => root_path }
+            高専カンファレンスエフェクト
+
+    #main
+      .container
+        = yield
