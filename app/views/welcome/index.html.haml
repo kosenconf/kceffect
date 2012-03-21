@@ -157,3 +157,40 @@
   .span4
     .event
       047tokyo
+
+.row
+  .span9
+    :plain
+      <iframe src="//www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fkosenconf&amp;width=870&amp;height=485&amp;colorscheme=light&amp;show_faces=true&amp;border_color&amp;stream=false&amp;header=false&amp;appId=371618846211228" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:870px; height:485px;" allowTransparency="true"></iframe>
+  .span3
+    :plain
+      <script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
+      <script>
+      new TWTR.Widget({
+        version: 2,
+        type: 'search',
+        search: 'kosenconf',
+        interval: 30000,
+        title: 'Kosen Conference',
+        subject: '高専カンファレンス',
+        width: 270,
+        height: 390,
+        theme: {
+          shell: {
+            background: '#000000',
+            color: '#ffffff'
+          },
+          tweets: {
+            background: '#ffffff',
+            color: '#444444',
+            links: '#1985b5'
+          }
+        },
+        features: {
+          scrollbar: false,
+          loop: true,
+          live: true,
+          behavior: 'default'
+        }
+      }).render().start();
+      </script>
