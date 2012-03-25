@@ -46,6 +46,47 @@ footer {
 #message {
   background-color: #eee;
   margin-bottom: 30px;
-  padding: 20px;
+  padding: 20px 0 5px;
   @include border-radius(10px);
+
+  .block {
+    margin-bottom: 25px;
+
+    h3 {
+      color: #fff;
+      background-color: #000;
+      margin-bottom: 15px;
+      padding: 3px 30px;
+    }
+
+    p {
+      margin: 0;
+      padding: 5px 30px;
+      text-indent: 1em;
+    }
+
+    p.credit {
+      text-align: right;
+    }
+
+    .members {
+      margin: 5px 30px;
+
+      span.member {
+        margin-right: 30px;
+
+        * {
+          vertical-align: middle;
+        }
+      }
+    }
+
+    .joinus {
+      margin: 5px 30px;
+    }
+
+    ul {
+      margin: 0 50px;
+    }
+  }
 }
