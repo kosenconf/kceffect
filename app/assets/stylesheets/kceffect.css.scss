@@ -1,9 +1,51 @@
-#main {
-  margin: 60px 0;
+@mixin border-radius($value) {
+  -webkit-border-radius: $value;
+  -moz-border-radius: $value;
+  border-radius: $value;
 }
 
-.event {
-  margin: 0 0 10px;
-  padding: 15px 10px;
-  border: 1px solid #ccc;
+#panel {
+  img.panel {
+    margin-left: 0;
+  }
+}
+
+header {
+  margin-top: -60px;
+  margin-bottom: 30px;
+
+  h1, h2 {
+    color: #fff;
+    text-shadow: 0 0 5px #000;
+    text-align: center;
+    line-height: 1em;
+  }
+
+  h1 {
+    font-size: 50px;
+  }
+
+  h2 {
+    font-size: 50px;
+  }
+}
+
+footer {
+  background-color: #000;
+  margin-top: 30px;
+  padding: 20px 0 10px;
+  border-top: 1px solid #ccc;
+
+  p {
+    color: #999;
+    font-size: 110%;
+    text-align: center;
+  }
+}
+
+#message {
+  background-color: #eee;
+  margin-bottom: 30px;
+  padding: 20px;
+  @include border-radius(10px);
 }

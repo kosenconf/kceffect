@@ -6,12 +6,17 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    .navbar.navbar-fixed-top
-      .navbar-inner
-        .container
-          %a.brand{ :href => root_path }
-            高専カンファレンスエフェクト
+    #panel
+      = image_tag("panel.png", :size => "2400x600", :class => "panel")
 
-    #main
-      .container
+    %header
+      %h1
+        高専カンファレンスエフェクト
+      %h2
+        Kosen Conference Effect
+    .container
+      #main
         = yield
+    %footer
+      %p
+        By Team Kosen Conference Effect
