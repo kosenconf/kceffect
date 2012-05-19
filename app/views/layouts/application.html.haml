@@ -6,12 +6,11 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    #panel
-      = image_tag("panel.jpg", :size => "2400x600", :class => "panel")
-
-    #controll
+    #control
       .container
         - if signed_in?
+          Signed in as
+          = image_tag(current_user.icon_url, :size => "24x24")
           = current_user.name
           = link_to "サインアウト", sign_out_path, :method => :delete
         - else

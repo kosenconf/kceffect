@@ -4,19 +4,20 @@
   border-radius: $value;
 }
 
-#panel {
-  img.panel {
-    margin-left: 0;
-  }
+#control {
+  padding: 10px 0;
+  text-align: right;
+  height: 24px;
 }
 
 header {
-  margin-top: -60px;
+  background-color: #000;
   margin-bottom: 30px;
+  padding: 20px 0;
 
   h1, h2 {
     color: #fff;
-    text-shadow: 0 0 5px #000;
+    text-shadow: 0 0 1px #fff;
     text-align: center;
     line-height: 1em;
   }
@@ -40,6 +41,18 @@ footer {
     color: #999;
     font-size: 110%;
     text-align: center;
+  }
+}
+
+.alert {
+  ul {
+    margin: 0 20px;
+  }
+}
+
+.field_with_errors {
+  input {
+    box-shadow: 0 0 3px rgba(255, 0, 0, 0.6);
   }
 }
 

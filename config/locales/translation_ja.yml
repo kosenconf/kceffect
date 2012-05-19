@@ -1,0 +1,19 @@
+ja:
+  activerecord:
+    models:
+      entry: "記入項目"  #g
+      user: "ユーザー"  #g
+
+    attributes:
+      entry:
+        comment: "コメント"  #g
+        url: URL  #g
+        user: :"activerecord.models.user"  #g
+
+      user:
+        access_secret: "アクセスの秘密"  #g
+        access_token: "アクセストークン"  #g
+        entries: "記入項目"  #g
+        icon_url: "アイコンURL"  #g
+        name: "名前"  #g
+        profile: "プロフィール"  #g

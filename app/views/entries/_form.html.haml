@@ -1,0 +1,21 @@
+= form_for entry, :html => { :class => "form-horizontal" } do |form|
+  - if entry.errors.any?
+    .alert.alert-error
+      %ul
+        - entry.errors.full_messages.each do |message|
+          %li
+            = message
+
+  %fieldset
+    .control-group
+      %label.control-label
+        URL
+      .controls
+        = form.text_field :url, :class => "span6"
+    .control-group
+      %label.control-label
+        Comment
+      .controls
+        = form.text_field :comment, :class => "span6"
+    .form-actions
+      = form.submit "保存する", :class => "btn"

@@ -6,6 +6,7 @@ gem "jquery-rails"
 gem "haml-rails"
 gem "twitter-bootstrap-rails"
 
+gem "i18n_generators"
 gem "settingslogic"
 gem "omniauth"
 gem "omniauth-twitter"
