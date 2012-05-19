@@ -6,6 +6,10 @@ gem "jquery-rails"
 gem "haml-rails"
 gem "twitter-bootstrap-rails"
 
+gem "settingslogic"
+gem "omniauth"
+gem "omniauth-twitter"
+
 group :assets do
   gem "sass-rails"
   gem "coffee-rails"

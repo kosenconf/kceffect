@@ -9,6 +9,14 @@
     #panel
       = image_tag("panel.jpg", :size => "2400x600", :class => "panel")
 
+    #controll
+      .container
+        - if signed_in?
+          = current_user.name
+          = link_to "サインアウト", sign_out_path, :method => :delete
+        - else
+          = link_to "サインイン", sign_in_path
+
     %header
       %h1
         高専カンファレンスエフェクト
