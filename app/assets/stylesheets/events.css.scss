@@ -1,0 +1,27 @@
+.event-header {
+  margin-bottom: 40px;
+
+  .cover {
+    margin-top: -30px;
+  }
+
+  .event-info {
+    padding: 10px;
+    border: 1px solid #999;
+
+    table {
+      tbody {
+        tr {
+          td {
+            padding: 2px 5px;
+          }
+
+          td.icon {
+            text-align: center;
+            font-size: 150%;
+          }
+        }
+      }
+    }
+  }
+}

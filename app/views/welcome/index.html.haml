@@ -1,10 +1,24 @@
 .row
   .span12
-    = link_to "エントリを登録する", new_entry_path
+    .lab{ :style => "margin-bottom: 50px;" }
+      = link_to "エントリを登録する", new_entry_path
+      \/
+      = link_to "イベントを登録する", new_event_path
 
 .row
-  .span6
-    = render :partial => "entries/board", :as => :entry, :collection => @entries
+  .span8
+    .lab{ :style => "margin-bottom: 50px;" }
+      %ul
+        - @events.each do |event|
+          %li
+            = link_to event.name, event
+
+  .span4
+    .lab{ :style => "margin-bottom: 50px;" }
+      %ul
+        - @entries.each do |entry|
+          %li
+            = link_to "エントリ:#{entry.id}", entry
 
 .row
   .span12

@@ -1,5 +1,6 @@
 class WelcomeController < ApplicationController
   def index
-    @entries = Entry.order("id DESC").limit(10)
+    @entries = Entry.order(:id)
+    @events  = Event.order(:start_at)
   end
 end

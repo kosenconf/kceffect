@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120519163357) do
+ActiveRecord::Schema.define(:version => 20120520090811) do
 
   create_table "entries", :force => true do |t|
     t.integer  "user_id",    :null => false
@@ -22,6 +22,25 @@ ActiveRecord::Schema.define(:version => 20120519163357) do
   end
 
   add_index "entries", ["user_id"], :name => "index_entries_on_user_id"
+
+  create_table "events", :force => true do |t|
+    t.string   "label",                      :null => false
+    t.string   "name",                       :null => false
+    t.string   "description"
+    t.string   "url"
+    t.integer  "turnout",     :default => 0, :null => false
+    t.string   "place"
+    t.string   "address"
+    t.datetime "start_at",                   :null => false
+    t.datetime "end_at",                     :null => false
+    t.string   "cover_url"
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+  end
+
+  add_index "events", ["end_at"], :name => "index_events_on_end_at"
+  add_index "events", ["label"], :name => "index_events_on_label", :unique => true
+  add_index "events", ["start_at"], :name => "index_events_on_start_at"
 
   create_table "users", :force => true do |t|
     t.string   "name",          :null => false

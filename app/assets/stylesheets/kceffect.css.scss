@@ -4,30 +4,21 @@
   border-radius: $value;
 }
 
-#control {
-  padding: 10px 0;
-  text-align: right;
-  height: 24px;
+#main {
+  margin-top: 70px;
 }
 
-header {
-  background-color: #000;
-  margin-bottom: 30px;
-  padding: 20px 0;
-
-  h1, h2 {
-    color: #fff;
-    text-shadow: 0 0 1px #fff;
-    text-align: center;
-    line-height: 1em;
-  }
-
-  h1 {
-    font-size: 50px;
-  }
-
-  h2 {
-    font-size: 50px;
+.navbar {
+  .navbar-inner {
+    .container {
+      ul.nav {
+        li.user-icon {
+          a {
+            padding: 9px 2px 9px;
+          }
+        }
+      }
+    }
   }
 }
 

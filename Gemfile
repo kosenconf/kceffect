@@ -8,6 +8,7 @@ gem "twitter-bootstrap-rails"
 gem "font-awesome-rails"
 
 gem "i18n_generators"
+gem "active_decorator"
 gem "settingslogic"
 gem "omniauth"
 gem "omniauth-twitter"

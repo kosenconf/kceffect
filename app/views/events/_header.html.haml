@@ -1,0 +1,36 @@
+.event-header
+  - if event.cover_url.present?
+    .cover
+      = image_tag(event.cover_url, :size => "940x470")
+  .event-info
+    %h2
+      = event.name
+    %table
+      %tbody
+        %tr
+          %td.icon
+            %i.icon-bookmark
+          %td
+            = "kosenconf-#{event.label}"
+        - if event.description.present?
+          %tr
+            %td.icon
+              %i.icon-flag
+            %td
+              = event.description
+        %tr
+          %td.icon
+            %i.icon-calendar
+          %td
+            = event.date
+        %tr
+          %td.icon
+            %i.icon-map-marker
+          %td
+            = event.place_and_address
+        - if event.url.present?
+          %tr
+            %td.icon
+              %i.icon-home
+            %td
+              = link_to "公式サイト", event.url, :target => "_blank"

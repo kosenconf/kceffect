@@ -20,24 +20,28 @@
     = csrf_meta_tags
 
   %body
-    #control
-      .container
-        - if signed_in?
-          Signed in as
-          = link_to image_tag(current_user.icon_url, :size => "24x24"), current_user
-          = link_to current_user.name, current_user
-          \/
-          = link_to "サインアウト", sign_out_path, :method => :delete
-        - else
-          = link_to "サインイン", sign_in_path
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          %h1
+            = link_to "高専カンファレンスエフェクト", root_path, :class => "brand"
+          %ul.nav
+            %li
+              = link_to "このサイトについて", root_path
+          %ul.nav.pull-right
+            - if signed_in?
+              %li.user-icon
+                = link_to image_tag(current_user.icon_url, :size => "20x20"), current_user
+              %li
+                = link_to current_user.name, current_user
+              %li
+                = link_to "サインアウト", sign_out_path, :method => :delete
+            - else
+              %li
+                = link_to "サインイン", sign_in_path
 
-    %header
-      %h1
-        高専カンファレンスエフェクト
-      %h2
-        Kosen Conference Effect
-    .container
-      #main
+    #main
+      .container
         = yield
     %footer
       %p
