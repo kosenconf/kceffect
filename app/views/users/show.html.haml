@@ -1,0 +1,5 @@
+.row
+  .span6
+    %h3
+      = "#{@user.name}と高専カンファレンス"
+    = render :partial => "entries/board", :as => :entry, :collection => @user.entries.order("id DESC")

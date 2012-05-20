@@ -1,8 +1,9 @@
 .entry-board{ :class => "entry-#{entry.id}" }
   .head
-    = user_icon(entry.user, 36)
-    = entry.user.name
-    - if current_user == entry.user
+    - user = entry.user
+    = link_to user_icon(user, 36), user
+    = link_to user.name, user
+    - if current_user == user
       \/
       = link_to "編集する", edit_entry_path(entry)
   .body

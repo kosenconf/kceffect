@@ -8,4 +8,8 @@ class User < ActiveRecord::Base
   validates :access_secret, :presence => true
 
   has_many :entries
+
+  def to_param
+    self.name
+  end
 end
