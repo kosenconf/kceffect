@@ -4,9 +4,21 @@
     %title 高専カンファレンスエフェクト #kosenconf
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
-    = csrf_meta_tags
+    %script{ :type => "text/javascript", :src => "http://s.hatena.ne.jp/js/HatenaStar.js" }
+    :javascript
+      Hatena.Star.SiteConfig = {
+        entryNodes: {
+          'div.entry-board': {
+            uri: '.body .url a',
+            title: '.body .url a',
+            container: '.social-widgets .hatena-star'
+          }
+        }
+      };
     :javascript
       var embedlyApiKey = "#{Settings.embedly.api_key}";
+    = csrf_meta_tags
+
   %body
     #control
       .container
