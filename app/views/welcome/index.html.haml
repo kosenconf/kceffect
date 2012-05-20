@@ -3,6 +3,10 @@
     = link_to "エントリを登録する", new_entry_path
 
 .row
+  .span6
+    = render :partial => "entries/board", :as => :entry, :collection => @entries
+
+.row
   .span12
     #message
       .block

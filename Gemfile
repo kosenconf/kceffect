@@ -5,6 +5,7 @@ gem "rails"
 gem "jquery-rails"
 gem "haml-rails"
 gem "twitter-bootstrap-rails"
+gem "font-awesome-rails"
 
 gem "i18n_generators"
 gem "settingslogic"

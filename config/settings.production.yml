@@ -1,3 +1,5 @@
 twitter:
   consumer_key:    dummy
   consumer_secret: dummy
+embedly:
+  api_key: dummy

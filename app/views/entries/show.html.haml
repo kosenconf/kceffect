@@ -1,4 +1,3 @@
-= @entry.comment
-= @entry.url
-by
-= @entry.user.name
+.row
+  .span6
+    = render :partial => "board", :as => :entry, :object => @entry

@@ -1,0 +1,21 @@
+.entry-board{ :class => "entry-#{entry.id}" }
+  .head
+    = user_icon(entry.user, 36)
+    = entry.user.name
+    - if current_user == entry.user
+      \/
+      = link_to "編集する", edit_entry_path(entry)
+  .body
+    - if entry.comment.present?
+      .comment
+        = entry.comment
+    .preview-box
+  .foot
+    %a{ :href => root_path }
+      %i.icon-star-empty
+      Favorite
+
+:javascript
+  preview("#{entry.url}", function(result) {
+    $(".entry-#{entry.id} .body .preview-box").empty().append(result);
+  });
