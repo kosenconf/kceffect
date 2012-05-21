@@ -6,19 +6,13 @@
       = link_to "イベントを登録する", new_event_path
 
 .row
-  .span8
+  .span6
     .lab{ :style => "margin-bottom: 50px;" }
-      %ul
-        - @events.each do |event|
-          %li
-            = link_to event.name, event
+      = render :partial => "events/banner", :as => :event, :collection => @events
 
-  .span4
+  .span6
     .lab{ :style => "margin-bottom: 50px;" }
-      %ul
-        - @entries.each do |entry|
-          %li
-            = link_to "エントリ:#{entry.id}", entry
+      = render :partial => "entries/board", :as => :entry, :collection => @entries
 
 .row
   .span12

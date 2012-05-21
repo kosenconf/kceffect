@@ -1,6 +1,6 @@
 class WelcomeController < ApplicationController
   def index
-    @entries = Entry.order(:id)
-    @events  = Event.order(:start_at)
+    @entries = Entry.order("id DESC")
+    @events  = Event.order("start_at DESC")
   end
 end

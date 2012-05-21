@@ -1,0 +1,11 @@
+.event-banner
+  %h3
+    = link_to event.name, event
+  .cover
+    = link_to image_tag(event.cover_url, :size => "458x229"), event
+  .event-info
+    %i.icon-bookmark
+    = event.label
+    \/
+    %i.icon-calendar
+    = event.date

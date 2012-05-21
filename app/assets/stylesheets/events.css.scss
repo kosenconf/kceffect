@@ -1,3 +1,39 @@
+.event-banner {
+  margin-bottom: 20px;
+  border: 1px solid #999;
+  position: relative;
+
+  h3 {
+    font-size: 120%;
+    position: absolute;
+    top: 8px;
+    left: 0;
+
+    a {
+      color: #fff;
+      background-color: #000;
+      text-decoration: none;
+      padding: 5px 10px;
+      opacity: 0.7;
+    }
+  }
+
+  .cover {
+  }
+
+  .event-info {
+    padding: 5px 10px;
+  }
+}
+
+.event-banner:hover {
+  h3 {
+    a {
+      opacity: 1.0;
+    }
+  }
+}
+
 .event-header {
   margin-bottom: 40px;
 
