@@ -1,7 +1,24 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+require "yaml"
+
+yml = YAML.load_file(File.expand_path("../events.yml", __FILE__))
+
+yml.each do |entry|
+  label  = entry[0]
+  detail = entry[1]
+
+  puts "Importing %s ..." % label
+
+  parameters = {
+    :label       => label,
+    :name        => detail["name"],
+    :description => detail["description"],
+    :url         => detail["url"],
+    :turnout     => detail["turnout"],
+    :place       => detail["place"],
+    :address     => detail["address"],
+    :start_at    => detail["date"],
+    :end_at      => detail["date"]
+  }
+
+  Event.create(parameters)
+end
