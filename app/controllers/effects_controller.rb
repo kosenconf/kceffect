@@ -5,6 +5,7 @@ class EffectsController < ApplicationController
 
   def new
     @effect = Effect.new
+    @tag    = params[:tag]
   end
 
   def edit
@@ -13,11 +14,17 @@ class EffectsController < ApplicationController
 
   def create
     parameters = params[:effect]
+    tags       = parameters.delete(:tags)
 
     @effect = Effect.new(parameters)
     @effect.user = current_user
 
     if @effect.save
+      tags.split(/\s+/).each do |tag_name|
+        tag     = Tag.where(:name => tag_name).first_or_create
+        tagging = Tagging.where(:tag_id => tag.id, :effect_id => @effect.id).first_or_create(:user_id => current_user.id)
+      end
+
       redirect_to @effect
     else
       render :action => "new"
@@ -27,10 +34,14 @@ class EffectsController < ApplicationController
   def update
     @effect    = Effect.find(params[:id])
     parameters = params[:effect]
+    tags       = parameters.delete(:tags)
 
-    @effect.url         = parameters[:url]
-    @effect.comment     = parameters[:comment]
-    @effect.effected_at = parameters[:effected_at]
+    @effect.update_attributes(parameters)
+
+    tags.split(/\s+/).each do |tag_name|
+      tag     = Tag.where(:name => tag_name).first_or_create
+      tagging = Tagging.where(:tag_id => tag.id, :effect_id => @effect.id).first_or_create(:user_id => current_user.id)
+    end
 
     if @effect.save
       redirect_to @effect

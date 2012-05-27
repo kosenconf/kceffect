@@ -10,6 +10,8 @@
       %span.badge
         %i.icon-calendar
         = effect.effected_at.to_s(:ymd)
+    .tags
+      = render :partial => "tags/label", :as => :tag, :collection => effect.tags.order("category DESC")
   .body
     - if effect.comment.present?
       .comment

@@ -1,0 +1,8 @@
+.row
+  .span8
+    %h3
+      = "タグ「#{@tag.name}」がつけられたエフェクト"
+
+    - @taggings.each do |tagging|
+      - effect = tagging.effect
+      = render :partial => "effects/board", :as => :effect, :object => effect

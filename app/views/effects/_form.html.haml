@@ -1,3 +1,5 @@
+- tag ||= nil
+
 = form_for effect, :html => { :class => "form-horizontal" } do |form|
   - if effect.errors.any?
     .alert.alert-error
@@ -24,5 +26,12 @@
         = form.datetime_select :effected_at, {}, :class => "span2"
         %p.help-block
           詳細な時刻まで入力する必要はありませんが、ユーザページでは、このデータの新しいものから順にエフェクトが表示されます。
+    .control-group
+      %label.control-label
+        タグ
+      .controls
+        = form.text_field :tags, :class => "span6", :value => (tag || effect.tags.map(&:name).join(" "))
+        %p.help-block
+          このエフェクトに関連するタグを付与して整理することができます。タグはスペース区切りで入力してください。
     .form-actions
       = form.submit "保存する", :class => "btn"

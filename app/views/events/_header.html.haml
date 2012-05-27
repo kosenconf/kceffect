@@ -34,3 +34,13 @@
               %i.icon-home
             %td
               = link_to "公式サイト", event.url, :target => "_blank"
+  .control
+    - if signed_in?
+      %ul
+        %li
+          = link_to "このイベントの情報を編集する", edit_event_path(event)
+        %li
+          = link_to "このイベントに関するエフェクトを登録する", new_effect_path(:tag => event.label)
+
+    - else
+      (サインインすると、イベントの情報を編集できます)

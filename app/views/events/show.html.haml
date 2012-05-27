@@ -6,7 +6,10 @@
   .span8
     %h3
       この開催が生んだエフェクト
-    = render :partial => "effects/board", :as => :effect, :collection => Effect.order("id DESC")
+    - if @taggings.empty?
+      この開催に関するエフェクトは、まだ登録されていません。
+    - else
+      = render :partial => "effects/board", :as => :effect, :collection => @taggings.map(&:effect)
 
   .span4
     - if signed_in?

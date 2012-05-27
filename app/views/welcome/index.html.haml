@@ -4,13 +4,20 @@
       = "全%d開催" % Event.count
       \/
       = "総参加者数 約%d人" % Event.sum(:turnout)
+      \/
+      = "全%dエフェクト" % Effect.count
 
 .row
-  .span12
+  .span8
     .lab{ :style => "margin-bottom: 50px;" }
       = link_to "エフェクトを登録する", new_effect_path
       \/
       = link_to "イベントを登録する", new_event_path
+
+  .span4
+    .tag-index
+      - @tags.each do |tag|
+        = link_to tag.name, tag, :class => "tag-link"
 
 .row
   .span12

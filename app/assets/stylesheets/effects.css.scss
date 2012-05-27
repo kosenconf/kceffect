@@ -13,6 +13,23 @@
       position: absolute;
       top: 18px;
       right: 10px;
+
+      .badge {
+        font-size: 12px;
+      }
+    }
+
+    .tags {
+      padding-top: 5px;
+
+      .label {
+        font-size: 12px;
+        margin-right: 5px;
+
+        a {
+          color: #fff;
+        }
+      }
     }
   }
 

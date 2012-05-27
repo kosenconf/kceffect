@@ -2,6 +2,7 @@ class EventsController < ApplicationController
   def show
     @event         = Event.find_by_label(params[:id])
     @contributions = @event.contributions.order("id DESC")
+    @taggings      = Tag.find_by_name(@event.label).taggings.order("id DESC")
 
     if signed_in?
       @contribution = Contribution.find_by_user_id_and_event_id(current_user.id, @event.id)

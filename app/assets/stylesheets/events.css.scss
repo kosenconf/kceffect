@@ -51,6 +51,7 @@
   background-color: #fff;
   margin-bottom: 40px;
   box-shadow: 0 0 3px #999;
+  position: relative;
 
   .cover {
     margin-top: -30px;
@@ -77,6 +78,19 @@
           }
         }
       }
+    }
+  }
+
+  .control {
+    position: absolute;
+    bottom: 12px;
+    right: 15px;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      text-align: right;
+      list-style-type: none;
     }
   }
 }

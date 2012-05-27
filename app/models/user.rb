@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   has_many :effects
   has_many :contributions
   has_many :events, :through => :contributions
+  has_many :taggings
 
   def to_param
     self.name
