@@ -6,10 +6,12 @@
       = link_to "イベントを登録する", new_event_path
 
 .row
-  .span6
-    .lab{ :style => "margin-bottom: 50px;" }
-      = render :partial => "events/banner", :as => :event, :collection => @events
+  .span12
+    .event-banner-box
+      - @events.each_with_index do |event, index|
+        = render :partial => "events/banner", :as => :event, :object => event, :locals => { :mode => index % 2 == 1 ? "right-side" : nil }
 
+.row
   .span6
     .lab{ :style => "margin-bottom: 50px;" }
       = render :partial => "entries/board", :as => :entry, :collection => @entries

@@ -1,8 +1,8 @@
-.event-banner
+.event-banner{ :class => mode }
   %h3
     = link_to event.name, event
   .cover
-    = link_to event.cover_tag(:size => "458x229"), event
+    = link_to event.cover_tag(:size => "460x230"), event
   .event-info
     %i.icon-bookmark
     = event.label
