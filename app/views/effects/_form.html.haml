@@ -1,0 +1,28 @@
+= form_for effect, :html => { :class => "form-horizontal" } do |form|
+  - if effect.errors.any?
+    .alert.alert-error
+      %ul
+        - effect.errors.full_messages.each do |message|
+          %li
+            = message
+
+  %fieldset
+    .control-group
+      %label.control-label
+        URL
+      .controls
+        = form.text_field :url, :class => "span6"
+    .control-group
+      %label.control-label
+        一言
+      .controls
+        = form.text_field :comment, :class => "span6"
+    .control-group
+      %label.control-label
+        いつのこと？
+      .controls
+        = form.datetime_select :effected_at, {}, :class => "span2"
+        %p.help-block
+          詳細な時刻まで入力する必要はありませんが、ユーザページでは、このデータの新しいものから順にエフェクトが表示されます。
+    .form-actions
+      = form.submit "保存する", :class => "btn"

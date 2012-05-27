@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   validates :access_token,  :presence => true
   validates :access_secret, :presence => true
 
-  has_many :entries
+  has_many :effects
 
   def to_param
     self.name

@@ -8,7 +8,7 @@
 .row
   .span12
     .lab{ :style => "margin-bottom: 50px;" }
-      = link_to "エントリを登録する", new_entry_path
+      = link_to "エフェクトを登録する", new_effect_path
       \/
       = link_to "イベントを登録する", new_event_path
 
@@ -23,6 +23,6 @@
 .row
   .span6
     %h3
-      みんなのエントリ
-    .entry-board-box
-      = render :partial => "entries/board", :as => :entry, :collection => @entries
+      みんなのエフェクト
+    .effect-board-box
+      = render :partial => "effects/board", :as => :effect, :collection => @effects

@@ -1,5 +1,5 @@
 Kceffect::Application.routes.draw do
-  resources :entries, :only => [:show, :new, :create, :edit, :update]
+  resources :effects, :only => [:show, :new, :create, :edit, :update]
   resources :users,   :only => [:show]
   resources :events,  :only => [:show, :new, :create, :edit, :update]
 

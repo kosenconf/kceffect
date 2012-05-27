@@ -3,4 +3,4 @@
     = render :partial => "header", :as => :event, :object => @event
 .row
   .span8
-    = render :partial => "entries/board", :as => :entry, :collection => Entry.order("id DESC")
+    = render :partial => "effects/board", :as => :effect, :collection => Effect.order("id DESC")

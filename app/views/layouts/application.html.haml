@@ -8,7 +8,7 @@
     :javascript
       Hatena.Star.SiteConfig = {
         entryNodes: {
-          'div.entry-board': {
+          'div.effect-board': {
             uri: '.body .url a',
             title: '.body .url a',
             container: '.social-widgets .hatena-star'
@@ -45,7 +45,7 @@
         = yield
 
     .container
-      = render "widgets"
+      = render :partial => "welcome/widgets"
 
     %footer
       %p
