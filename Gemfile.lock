@@ -126,7 +126,7 @@ GEM
     rake (0.9.2.2)
     rdoc (3.12)
       json (~> 1.4)
-    sass (3.1.18)
+    sass (3.1.19)
     sass-rails (3.2.5)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
@@ -148,7 +148,7 @@ GEM
     treetop (1.4.10)
       polyglot
       polyglot (>= 0.3.1)
-    twitter-bootstrap-rails (2.0.7)
+    twitter-bootstrap-rails (2.0.8)
       actionpack (>= 3.1)
       less-rails (~> 2.2.2)
       railties (>= 3.1)
