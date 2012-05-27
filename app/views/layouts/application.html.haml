@@ -44,10 +44,9 @@
       .container
         = yield
 
-    .container
-      = render :partial => "welcome/widgets"
-
     %footer
-      %p
-        = Time.now.year
-        Team KCEffect
+      .container
+        = render :partial => "welcome/widgets"
+        %p
+          = Time.now.year
+          Team KCEffect
