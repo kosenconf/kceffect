@@ -1,7 +1,7 @@
 .event-header
   - if event.cover_url.present?
     .cover
-      = image_tag(event.cover_url, :size => "940x470")
+      = event.cover_tag(:size => "940x470")
   .event-info
     %h2
       = event.name

@@ -2,7 +2,7 @@
   %h3
     = link_to event.name, event
   .cover
-    = link_to image_tag(event.cover_url, :size => "458x229"), event
+    = link_to event.cover_tag(:size => "458x229"), event
   .event-info
     %i.icon-bookmark
     = event.label

@@ -15,4 +15,9 @@ module EventDecorator
   def place_and_address
     "#{place} (#{address})"
   end
+
+  def cover_tag(options = {})
+    path = cover_url.present? ? cover_url : "white.png"
+    image_tag(path, options)
+  end
 end
