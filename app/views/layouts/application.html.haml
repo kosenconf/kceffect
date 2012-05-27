@@ -27,7 +27,7 @@
             = link_to "高専カンファレンスエフェクト", root_path, :class => "brand"
           %ul.nav
             %li
-              = link_to "このサイトについて", root_path
+              = link_to "このサイトについて", about_path
           %ul.nav.pull-right
             - if signed_in?
               %li.user-icon
@@ -43,6 +43,10 @@
     #main
       .container
         = yield
+
+    .container
+      = render "widgets"
+
     %footer
       %p
         = Time.now.year

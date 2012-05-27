@@ -8,5 +8,7 @@ Kceffect::Application.routes.draw do
   get    "/auth/failure",          :to => "sessions#failure"
   delete "/sessions",              :to => "sessions#destroy", :as => "sign_out"
 
+  get  "/about", :to => "welcome#about", :as => "about"
+
   root :to => "welcome#index"
 end
