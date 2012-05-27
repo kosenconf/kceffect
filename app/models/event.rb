@@ -8,6 +8,9 @@ class Event < ActiveRecord::Base
   validates :end_at,   :presence => true
   validates :url,      :url_format => true
 
+  has_many :contributions
+  has_many :users, :through => :contributions
+
   def to_param
     self.label
   end

@@ -1,0 +1,20 @@
+.form-for-contribution
+  = form_for contribution do |form|
+    = form.hidden_field :event_id, :value => event.id
+    %label.checkbox
+      = form.check_box :attendee
+      参加しました
+    %label.checkbox
+      = form.check_box :staff
+      運営しました
+    %label.checkbox
+      = form.check_box :talker
+      発表しました
+    %label.checkbox
+      = form.check_box :watcher
+      視聴しました
+    %label.checkbox
+      = form.check_box :dorar
+      ドラを鳴らしました
+    .action
+      = form.submit "登録する", :class => "btn"

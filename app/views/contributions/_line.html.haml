@@ -1,0 +1,16 @@
+- event = contribution.event
+
+%a.contribution-line{ :href => url_for(event) }
+  %h4
+    = event.name
+  .info
+    %i.icon-bookmark
+    = "kosenconf-#{event.label}"
+  .kinds
+    - Contribution.kinds.each do |kind|
+      - if contribution.send(kind)
+        %span.label.label-info
+          = t(kind)
+      - else
+        %span.label.silent
+          = t(kind)

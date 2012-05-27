@@ -11,7 +11,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120520090811) do
+ActiveRecord::Schema.define(:version => 20120527112608) do
+
+  create_table "contributions", :force => true do |t|
+    t.integer  "user_id",                       :null => false
+    t.integer  "event_id",                      :null => false
+    t.boolean  "attendee",   :default => false
+    t.boolean  "staff",      :default => false
+    t.boolean  "talker",     :default => false
+    t.boolean  "dorar",      :default => false
+    t.boolean  "watcher",    :default => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+  end
+
+  add_index "contributions", ["event_id"], :name => "index_contributions_on_event_id"
+  add_index "contributions", ["user_id", "event_id"], :name => "index_contributions_on_user_id_and_event_id", :unique => true
+  add_index "contributions", ["user_id"], :name => "index_contributions_on_user_id"
 
   create_table "effects", :force => true do |t|
     t.integer  "user_id",     :null => false

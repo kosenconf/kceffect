@@ -1,6 +1,12 @@
 class EventsController < ApplicationController
   def show
-    @event = Event.find_by_label(params[:id])
+    @event         = Event.find_by_label(params[:id])
+    @contributions = @event.contributions.order("id DESC")
+
+    if signed_in?
+      @contribution = Contribution.find_by_user_id_and_event_id(current_user.id, @event.id)
+      @contribution ||= Contribution.new
+    end
   end
 
   def new

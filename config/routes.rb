@@ -1,7 +1,8 @@
 Kceffect::Application.routes.draw do
-  resources :effects, :only => [:show, :new, :create, :edit, :update]
-  resources :users,   :only => [:show]
-  resources :events,  :only => [:show, :new, :create, :edit, :update]
+  resources :effects,       :only => [:show, :new, :create, :edit, :update]
+  resources :users,         :only => [:show]
+  resources :events,        :only => [:show, :new, :create, :edit, :update]
+  resources :contributions, :only => [:create, :update]
 
   get    "/auth/twitter",          :as => "sign_in"
   get    "/auth/twitter/callback", :to => "sessions#create"

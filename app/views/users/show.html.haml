@@ -1,5 +1,11 @@
 .row
-  .span6
+  .span8
     %h3
-      = "#{@user.name}と高専カンファレンス"
+      = "#{@user.name} のエフェクト"
     = render :partial => "effects/board", :as => :effect, :collection => @effects
+
+  .span4
+    - unless @contributions.empty?
+      %h3
+        関わったイベント
+      = render :partial => "contributions/line", :as => :contribution, :collection => @contributions

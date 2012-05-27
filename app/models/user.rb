@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   validates :access_secret, :presence => true
 
   has_many :effects
+  has_many :contributions
+  has_many :events, :through => :contributions
 
   def to_param
     self.name

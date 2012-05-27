@@ -1,6 +1,23 @@
 .row
   .span12
     = render :partial => "header", :as => :event, :object => @event
+
 .row
   .span8
+    %h3
+      この開催が生んだエフェクト
     = render :partial => "effects/board", :as => :effect, :collection => Effect.order("id DESC")
+
+  .span4
+    - if signed_in?
+      .contribution-with
+        %h3
+          あなたの関わりは？
+        = render :partial => "contributions/form", :as => :contribution, :object => @contribution, :locals => { :event => @event }
+
+    - unless @contributions.empty?
+      %h3
+        関わった人たち
+      = render :partial => "contributions/contributor", :as => :contribution, :collection => @contributions
+      :javascript
+        $("a.user-cube").tooltip();

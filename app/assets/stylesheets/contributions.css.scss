@@ -1,0 +1,46 @@
+.form-for-contribution {
+  background-color: #fff;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  position: relative;
+
+  form {
+    margin: 0;
+  }
+
+  .action {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+}
+
+a.contribution-line {
+  display: block;
+  text-decoration: none;
+  padding: 10px 5px;
+  border-top: 1px solid #ccc;
+
+  h4 {
+    color: #333;
+  }
+
+  .kinds {
+    padding-top: 4px;
+    text-align: right;
+
+    .label {
+      font-size: 12px;
+      margin-right: 5px;
+    }
+
+    .silent {
+      opacity: 0.25;
+    }
+  }
+}
+
+a.contribution-line:hover {
+  background-color: #ddd;
+}
