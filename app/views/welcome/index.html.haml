@@ -1,11 +1,26 @@
 .row
   .span12
-    .lab{ :style => "margin-bottom: 50px;" }
-      = "全%d開催" % Event.count
-      \/
-      = "総参加者数 約%d人" % Event.sum(:turnout)
-      \/
-      = "全%dエフェクト" % Effect.count
+    #cover
+      - @covers.each_with_index do |cover, index|
+        = image_tag(cover, :size => "312x156", :class => "photo photo#{index}")
+      %h1
+        高専カンファレンスエフェクト
+      #stats
+        .stat
+          .caption
+            イベント開催数
+          .count
+            = Event.count
+        .stat
+          .caption
+            総参加者数
+          .count
+            = Event.sum(:turnout)
+        .stat
+          .caption
+            登録エフェクト
+          .count
+            = Effect.count
 
 .row
   .span8

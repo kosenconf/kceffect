@@ -1,3 +1,72 @@
+@import "kceffect";
+
+#cover {
+  height: 466px;
+  width: 936px;
+  background-color: #333;
+  margin-top: -32px;
+  margin-bottom: 40px;
+  border: 2px solid #000;
+  position: relative;
+
+  h1 {
+    width: 936px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.75);
+    font-size: 360%;
+    text-align: center;
+    padding: 20px 0;
+    position: absolute;
+    top: 170px;
+  }
+
+  #stats {
+    width: 936px;
+    text-align: center;
+    position: absolute;
+    bottom: 30px;
+
+    .stat {
+      display: inline-block;
+      width: 120px;
+      text-align: center;
+      margin: 0 30px;
+      padding: 10px;
+      background-color: rgba(0, 0, 0, 0.75);
+      @include border-radius(10px);
+
+      .caption, .count {
+        color: #fff;
+      }
+
+      .count {
+        font-weight: bold;
+        font-size: 50px;
+        line-height: 50px;
+      }
+    }
+  }
+
+  .photo {
+    opacity: 0.5;
+    position: absolute;
+  }
+
+  .photo:hover {
+    opacity: 1.0;
+  }
+
+  .photo0 { left:   0px; top:   0px; }
+  .photo1 { left: 312px; top:   0px; }
+  .photo2 { left: 624px; top:   0px; }
+  .photo3 { left:   0px; top: 156px; }
+  .photo4 { left: 312px; top: 156px; }
+  .photo5 { left: 624px; top: 156px; }
+  .photo6 { left:   0px; top: 312px; }
+  .photo7 { left: 312px; top: 312px; }
+  .photo8 { left: 624px; top: 312px; }
+}
+
 #intro {
   margin-bottom: 40px;
 
