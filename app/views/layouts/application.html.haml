@@ -38,18 +38,28 @@
                   %b.caret
                 %ul.dropdown-menu
                   %li
-                    = link_to "マイページ", current_user
+                    = link_to current_user do
+                      %i.icon-home
+                      マイページ
                   %li
-                    = link_to "エフェクトを登録する", new_effect_path
+                    = link_to new_effect_path do
+                      %i.icon-fire
+                      エフェクトを登録する
                   %li
-                    = link_to "イベントを登録する", new_event_path
+                    = link_to new_event_path do
+                      %i.icon-calendar
+                      イベントを登録する
                   %li.divider
                   %li
-                    = link_to "サインアウト", sign_out_path, :method => :delete
+                    = link_to sign_out_path, :method => :delete, do
+                      %i.icon-signout
+                      サインアウト
           - else
             %ul.nav.pull-right
               %li
-                = link_to "Twitterアカウントでサインイン", sign_in_path
+                = link_to sign_in_path do
+                  %i.icon-twitter-sign
+                  Twitterアカウントでサインイン
 
     #main
       .container
