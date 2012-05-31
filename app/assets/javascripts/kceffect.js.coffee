@@ -7,8 +7,6 @@
   $.getJSON api, (json) ->
     title = if json.title then json.title else json.url
 
-    console.log json
-
     resizedWidth = 0
     if json.thumbnail_width
       if json.thumbnail_width < maxThumbnailWidth
