@@ -9,14 +9,14 @@
   %fieldset
     .control-group
       %label.control-label
-        連番
+        連番 (必須)
       .controls
         = form.text_field :label, :class => "span2"
         %p.help-block
           「001tokyo」「002hokkaido」に相当する部分を入力します
     .control-group
       %label.control-label
-        イベント名
+        イベント名 (必須)
       .controls
         = form.text_field :name, :class => "span8"
     .control-group
@@ -31,12 +31,12 @@
         = form.text_field :turnout, :class => "span1"
     .control-group
       %label.control-label
-        会場
+        会場 (必須)
       .controls
         = form.text_field :place, :class => "span8"
     .control-group
       %label.control-label
-        会場住所
+        会場住所 (必須)
       .controls
         = form.text_field :address, :class => "span8"
     .control-group
@@ -54,7 +54,6 @@
         公式サイトURL
       .controls
         = form.text_field :url, :class => "span8"
-
     .control-group
       %label.control-label
         カバー画像URL
@@ -62,15 +61,15 @@
         = form.text_field :cover_url, :class => "span8"
         %p.help-block
           「幅940px」「高さ470px」の画像のURLを指定します
-
     .control-group
       %label.control-label
-        カバー画像オリジナルURL
+        カバー画像
+        %br
+        オリジナルURL
       .controls
         = form.text_field :cover_original_url, :class => "span8"
         %p.help-block
           カバー画像のオリジナルの参照先があれば設定してください (FlickrのURL等)
-
     .control-group
       %label.control-label
         カバー画像撮影者名

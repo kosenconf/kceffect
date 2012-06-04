@@ -1,6 +1,6 @@
 tagsTextField = $("#effect_tags")
 
-$(".tag-checker").click ->
+$(".tag-selector").click ->
   selected = $.trim($(this).text())
   current = tagsTextField.val().split(/\s/)
 

@@ -11,7 +11,7 @@
   %fieldset
     .control-group
       %label.control-label
-        URL
+        URL (必須)
       .controls
         = form.text_field :url, :class => "span6"
     .control-group
@@ -35,9 +35,9 @@
           このエフェクトに関連するタグを付与して整理に役立てることができます。タグはスペース区切りで入力してください。
         %p.help-block
           下記のタグの一覧から選択して入力することもできます。
-        %p.help-block
+        %p.help-block.tag-list
           - Tag.order("category DESC, name").each do |tag|
-            %span.tag-checker
+            %span.tag-selector
               = tag.name
     .form-actions
       = form.submit "保存する", :class => "btn"

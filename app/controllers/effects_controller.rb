@@ -34,6 +34,7 @@ class EffectsController < ApplicationController
 
       redirect_to @effect
     else
+      @title = "エフェクトを登録する"
       render :action => "new"
     end
   end
@@ -57,6 +58,7 @@ class EffectsController < ApplicationController
     if @effect.save
       redirect_to @effect
     else
+      @title = "エフェクトを編集する"
       render :action => "edit"
     end
   end

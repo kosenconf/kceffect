@@ -101,14 +101,20 @@
 }
 
 .effect-form {
-  .tag-checker {
+  .tag-list {
+    padding: 5px;
+    border: 1px solid #ccc;
+  }
+
+  .tag-selector {
     font-size: 90%;
     margin: 5px 0;
     padding: 3px;
     cursor: pointer;
   }
 
-  .tag-checker:hover {
-    background-color: #fff;
+  .tag-selector:hover {
+    color: #fff;
+    background-color: #999;
   }
 }
