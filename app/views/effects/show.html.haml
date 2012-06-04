@@ -1,3 +1,27 @@
+- user = @effect.user
+- tags = @effect.tags
+
 .row
-  .span6
+  .span8
+    %h3
+      %i.icon-fire
+      = "#{user.name}のエフェクト"
     = render :partial => "board", :as => :effect, :object => @effect
+
+  .span4
+    %h3
+      %i.icon-search
+      他のエフェクトも見てみよう
+    %ul
+      - if user.effects.count > 1
+        %li
+          = user_icon(user, 16)
+          = link_to "#{user.name}さんのエフェクト(#{user.effects.count}個)", user
+      - tags.order("category DESC, name").each do |tag|
+        - if tag.effects.count > 1
+          %li
+            - if tag.event?
+              - event = tag.event
+              = link_to "「#{event.name}」に関連するエフェクト(#{tag.effects.count}個)", event
+            - else
+              = link_to "タグ「#{tag.name}」に関連するエフェクト(#{tag.effects.count}個)", tag

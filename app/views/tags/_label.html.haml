@@ -1,7 +1,7 @@
-- if tag.category == "event"
+- if tag.event?
   %span.label.label-success
     %i.icon-tag
-    = link_to tag.name, url_for(Event.find_by_label(tag.name))
+    = link_to tag.name, tag.event
 - else
   %span.label
     %i.icon-tag

@@ -1,8 +1,15 @@
 class EventsController < ApplicationController
+  def index
+    @events = Event.order("start_at, label")
+  end
+
   def show
     @event         = Event.find_by_label(params[:id])
     @contributions = @event.contributions.order("id DESC")
     @taggings      = Tag.find_by_name(@event.label).taggings.order("id DESC")
+
+    @prev_event = Event.where("start_at < ?", @event.start_at).order("start_at DESC, label").first
+    @next_event = Event.where("start_at > ?", @event.start_at).order("start_at ASC,  label").first
 
     if signed_in?
       @contribution = Contribution.find_by_user_id_and_event_id(current_user.id, @event.id)

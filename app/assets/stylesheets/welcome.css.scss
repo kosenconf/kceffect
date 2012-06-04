@@ -5,7 +5,7 @@
   width: 936px;
   background-color: #333;
   margin-top: -32px;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
   border: 2px solid #000;
   position: relative;
 
@@ -68,7 +68,7 @@
 }
 
 #intro {
-  margin-bottom: 40px;
+  margin-bottom: 50px;
 
   h3 {
     margin-bottom: 5px;
@@ -80,5 +80,19 @@
     * {
       vertical-align: middle;
     }
+  }
+}
+
+#events-on-top, #users-on-top {
+  margin-bottom: 50px;
+}
+
+#events-on-top {
+  position: relative;
+
+  .more-events {
+    position: absolute;
+    right: 0;
+    top: 8px;
   }
 }

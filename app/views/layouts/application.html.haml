@@ -24,10 +24,11 @@
       .navbar-inner
         .container
           %h1
-            = link_to "高専カンファレンスエフェクト", root_path, :class => "brand"
-          %ul.nav
-            %li
-              = link_to "このサイトについて", about_path
+            = link_to root_path, :class => "brand" do
+              %i.icon-fire
+              高専カンファレンスエフェクト
+              %i.icon-fire
+
           - if signed_in?
             %ul.nav.pull-right
               %li
@@ -40,20 +41,20 @@
                   %li
                     = link_to current_user do
                       %i.icon-home
-                      マイページ
+                      マイページを見る
                   %li
                     = link_to new_effect_path do
                       %i.icon-fire
-                      エフェクトを登録する
+                      エフェクトを載せる
                   %li
                     = link_to new_event_path do
                       %i.icon-calendar
-                      イベントを登録する
+                      開催情報を登録する
                   %li.divider
                   %li
                     = link_to sign_out_path, :method => :delete, do
                       %i.icon-signout
-                      サインアウト
+                      サインアウトする
           - else
             %ul.nav.pull-right
               %li

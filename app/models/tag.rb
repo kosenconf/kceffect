@@ -11,4 +11,12 @@ class Tag < ActiveRecord::Base
   def to_param
     self.name
   end
+
+  def event?
+    self.category == "event"
+  end
+
+  def event
+    Event.find_by_label(self.name)
+  end
 end

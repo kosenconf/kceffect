@@ -1,7 +1,7 @@
 Kceffect::Application.routes.draw do
   resources :effects,       :only => [:show, :new, :create, :edit, :update]
   resources :users,         :only => [:show]
-  resources :events,        :only => [:show, :new, :create, :edit, :update]
+  resources :events,        :only => [:index, :show, :new, :create, :edit, :update]
   resources :contributions, :only => [:create, :update]
   resources :tags,          :only => [:show]
 

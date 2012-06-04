@@ -5,6 +5,7 @@
 .row
   .span8
     %h3
+      %i.icon-fire
       この開催が生んだエフェクト
     - if @taggings.empty?
       この開催に関するエフェクトは、まだ登録されていません。
@@ -15,12 +16,33 @@
     - if signed_in?
       .contribution-with
         %h3
+          %i.icon-user
           あなたの関わりは？
         = render :partial => "contributions/form", :as => :contribution, :object => @contribution, :locals => { :event => @event }
 
     - unless @contributions.empty?
       %h3
+        %i.icon-user
         関わった人たち
       = render :partial => "contributions/contributor", :as => :contribution, :collection => @contributions
-      :javascript
-        $("a.user-cube").tooltip();
+
+.event-navigator
+  .row
+    .span6.navigator-left
+      %h4
+        この前の開催イベント
+      - if @prev_event
+        = link_to @prev_event do
+          %i.icon-backward
+          = @prev_event.name
+          = "(kosenconf-#{@prev_event.label})"
+      - else
+        これより過去のイベントはありません
+    .span6.navigator-right
+      - if @next_event
+        %h4
+          この次の開催イベント
+        = link_to @next_event do
+          = @next_event.name
+          = "(kosenconf-#{@next_event.label})"
+          %i.icon-forward

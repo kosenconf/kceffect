@@ -34,3 +34,5 @@
 
 $(document).ready ->
   $.embedly.defaults["key"] = embedlyApiKey;
+
+  $(".user-cube, .tag-link").tooltip()

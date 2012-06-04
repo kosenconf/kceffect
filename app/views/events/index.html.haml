@@ -1,0 +1,8 @@
+.row
+  .span12
+    %h3
+      %i.icon-flag
+      これまでに開催されたイベントの一覧
+    .event-banner-box
+      - @events.each_with_index do |event, index|
+        = render :partial => "events/banner", :as => :event, :object => event, :locals => { :mode => index % 2 == 1 ? "right-side" : nil }

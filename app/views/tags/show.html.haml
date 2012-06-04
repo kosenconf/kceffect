@@ -1,8 +1,18 @@
 .row
   .span8
     %h3
+      %i.icon-tag
       = "タグ「#{@tag.name}」がつけられたエフェクト"
 
     - @taggings.each do |tagging|
       - effect = tagging.effect
       = render :partial => "effects/board", :as => :effect, :object => effect
+
+  .span4
+    %h3
+      %i.icon-tags
+      タグの一覧
+    - @tags.each do |tag|
+      - count = tag.effects.count
+      - if count > 0
+        = link_to "%s (%d)" % [tag.name, count], tag, :class => "tag-link", :title => "#{count}個のエフェクトがあります"

@@ -1,11 +1,13 @@
 .row
   .span8
     %h3
-      = "#{@user.name} のエフェクト"
+      %i.icon-user
+      = "#{@user.name}のエフェクト"
     = render :partial => "effects/board", :as => :effect, :collection => @effects
 
   .span4
     - unless @contributions.empty?
       %h3
+        %i.icon-flag
         関わったイベント
       = render :partial => "contributions/line", :as => :contribution, :collection => @contributions

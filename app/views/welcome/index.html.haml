@@ -8,7 +8,7 @@
       #stats
         .stat
           .caption
-            イベント開催数
+            開催イベント数
           .count
             = Event.count
         .stat
@@ -22,18 +22,6 @@
           .count
             = Effect.count
 
-.row
-  .span8
-    .lab{ :style => "margin-bottom: 50px;" }
-      = link_to "エフェクトを登録する", new_effect_path
-      \/
-      = link_to "イベントを登録する", new_event_path
-
-  .span4
-    .tag-index
-      - @tags.each do |tag|
-        = link_to tag.name, tag, :class => "tag-link"
-
 #intro
   .row
     .span4
@@ -42,6 +30,10 @@
         このサイトは？
       %p
         これまでに開催された高専カンファレンスのまわりで起こったこと「エフェクト」を、それぞれの手で、ひとつずつまとめていくサイトです。
+      %p
+        = link_to about_path do
+          %i.icon-question-sign
+          もっと詳しく
 
     .span4
       %h3
@@ -49,6 +41,16 @@
         エフェクトを見る
       %p
         高専カンファレンスのまわりで起こったエフェクトを「開催ごと」「人ごと」「タグごと」に探して見ることができます。
+      %p
+        = link_to "#events-on-top" do
+          %i.icon-flag
+          開催から探す
+        = link_to "#users-on-top" do
+          %i.icon-user
+          人から探す
+        = link_to "#tags-on-top" do
+          %i.icon-tag
+          タグから探す
 
     .span4
       %h3
@@ -56,18 +58,49 @@
         エフェクトを載せる
       %p
         あなたが体感したエフェクトを、ぜひ載せてみてください！他のみんなと共有して、よりよいエフェクトにつなげていきましょう。
+      %p
+        - if signed_in?
+          ページ右上のメニューからどうぞ！
+        - else
+          = link_to sign_in_path do
+            %i.icon-twitter-sign
+            ユーザ登録してエフェクトを載せよう！
+
+#events-on-top
+  .row
+    .span12
+      %h3
+        %i.icon-flag
+        最近の開催イベント
+      .event-banner-box
+        - @events.each_with_index do |event, index|
+          = render :partial => "events/banner", :as => :event, :object => event, :locals => { :mode => index % 2 == 1 ? "right-side" : nil }
+      .more-events
+        = link_to "開催イベントの一覧を見る", events_path
 
 .row
-  .span12
-    %h3
-      これまでの開催
-    .event-banner-box
-      - @events.each_with_index do |event, index|
-        = render :partial => "events/banner", :as => :event, :object => event, :locals => { :mode => index % 2 == 1 ? "right-side" : nil }
+  .span8
+    #effects-on-top
+      %h3
+        %i.icon-fire
+        新着エフェクト
+      .effect-board-box
+        = render :partial => "effects/board", :as => :effect, :collection => @effects
 
-.row
-  .span6
-    %h3
-      みんなのエフェクト
-    .effect-board-box
-      = render :partial => "effects/board", :as => :effect, :collection => @effects
+  .span4
+    #users-on-top
+      %h3
+        %i.icon-user
+        利用しているみなさん
+      .user-icons
+        - @users.each do |user|
+          = link_to user_icon(user, 36), user, :class => "user-cube", :title => user.name
+
+    #tags-on-top
+      %h3
+        %i.icon-tags
+        エフェクトに付けられたタグ
+      - @tags.each do |tag|
+        - count = tag.effects.count
+        - if count > 0
+          = link_to "%s (%d)" % [tag.name, count], tag, :class => "tag-link", :title => "#{count}個のエフェクトがあります"

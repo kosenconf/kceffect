@@ -1,3 +1,6 @@
+- mode ||= nil
+- count = Tag.find_by_name(event.label).effects.count
+
 .event-banner{ :class => mode }
   %h3
     = link_to event.name, event
@@ -9,3 +12,7 @@
     \/
     %i.icon-calendar
     = event.date
+    - if count > 0
+      .effect-count
+        %i.icon-fire
+        = "#{count}個のエフェクト"

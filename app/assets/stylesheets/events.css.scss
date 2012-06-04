@@ -31,11 +31,15 @@
     }
   }
 
-  .cover {
-  }
-
   .event-info {
     padding: 5px 10px;
+    position: relative;
+
+    .effect-count {
+      position: absolute;
+      right: 10px;
+      bottom: 5px;
+    }
   }
 }
 
@@ -49,7 +53,7 @@
 
 .event-header {
   background-color: #fff;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   box-shadow: 0 0 3px #999;
   position: relative;
 
@@ -58,7 +62,7 @@
   }
 
   .event-info {
-    padding: 10px;
+    padding: 10px 20px;
     border: 1px solid #999;
 
     h2 {
@@ -84,7 +88,7 @@
   .control {
     position: absolute;
     bottom: 12px;
-    right: 15px;
+    right: 20px;
 
     ul {
       margin: 0;
@@ -92,5 +96,15 @@
       text-align: right;
       list-style-type: none;
     }
+  }
+}
+
+.event-navigator {
+  margin-top: 30px;
+  padding-top: 10px;
+  border-top: 1px solid #ccc;
+
+  .navigator-right {
+    text-align: right;
   }
 }
