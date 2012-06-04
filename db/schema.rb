@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120527134942) do
+ActiveRecord::Schema.define(:version => 20120604121135) do
 
   create_table "contributions", :force => true do |t|
     t.integer  "user_id",                       :null => false
@@ -41,18 +41,20 @@ ActiveRecord::Schema.define(:version => 20120527134942) do
   add_index "effects", ["user_id"], :name => "index_effects_on_user_id"
 
   create_table "events", :force => true do |t|
-    t.string   "label",                      :null => false
-    t.string   "name",                       :null => false
+    t.string   "label",                                :null => false
+    t.string   "name",                                 :null => false
     t.string   "description"
     t.string   "url"
-    t.integer  "turnout",     :default => 0, :null => false
+    t.integer  "turnout",               :default => 0, :null => false
     t.string   "place"
     t.string   "address"
-    t.datetime "start_at",                   :null => false
-    t.datetime "end_at",                     :null => false
+    t.datetime "start_at",                             :null => false
+    t.datetime "end_at",                               :null => false
     t.string   "cover_url"
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
+    t.datetime "created_at",                           :null => false
+    t.datetime "updated_at",                           :null => false
+    t.string   "cover_original_url"
+    t.string   "cover_original_author"
   end
 
   add_index "events", ["end_at"], :name => "index_events_on_end_at"

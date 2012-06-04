@@ -54,6 +54,7 @@
         公式サイトURL
       .controls
         = form.text_field :url, :class => "span8"
+
     .control-group
       %label.control-label
         カバー画像URL
@@ -61,5 +62,20 @@
         = form.text_field :cover_url, :class => "span8"
         %p.help-block
           「幅940px」「高さ470px」の画像のURLを指定します
+
+    .control-group
+      %label.control-label
+        カバー画像オリジナルURL
+      .controls
+        = form.text_field :cover_original_url, :class => "span8"
+        %p.help-block
+          カバー画像のオリジナルの参照先があれば設定してください (FlickrのURL等)
+
+    .control-group
+      %label.control-label
+        カバー画像撮影者名
+      .controls
+        = form.text_field :cover_original_author, :class => "span8"
+
     .form-actions
       = form.submit "保存する", :class => "btn"

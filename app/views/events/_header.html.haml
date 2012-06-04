@@ -2,6 +2,15 @@
   - if event.cover_url.present?
     .cover
       = event.cover_tag(:size => "940x470")
+      - if event.cover_original_url.present? || event.cover_original_author.present?
+        .cover-info
+          - if event.cover_original_url.present? && event.cover_original_author.present?
+            = link_to "Cover photo taken by #{event.cover_original_author}", event.cover_original_url, :target => "_blank"
+          - elsif event.cover_original_url.present?
+            = link_to "Cover photo from #{event.cover_original_url}", event.cover_original_url, :target => "_blank"
+          - elsif event.cover_original_author.present?
+            %span
+              = "Cover photo taken by #{event.cover_original_author}"
   .event-info
     %h2
       = event.name

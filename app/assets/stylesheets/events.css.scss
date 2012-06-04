@@ -59,6 +59,25 @@
 
   .cover {
     margin-top: -30px;
+    position: relative;
+
+    .cover-info {
+      position: absolute;
+      bottom: 3px;
+      right: 0;
+
+      a, span {
+        color: #fff;
+        background-color: #000;
+        padding: 3px 10px;
+        text-decoration: none;
+        opacity: 0.5;
+      }
+
+      a:hover, span:hover {
+        opacity: 1;
+      }
+    }
   }
 
   .event-info {
