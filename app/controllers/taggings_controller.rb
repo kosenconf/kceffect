@@ -1,4 +1,6 @@
 class TaggingsController < ApplicationController
+  before_filter :require_sign_in, :only => [:create, :destroy]
+
   def create
     effect   = Effect.find(params[:tagging][:effect_id])
     tag_name = params[:tag].gsub(/\s/, "")

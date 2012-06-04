@@ -5,6 +5,13 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  def require_sign_in
+    unless signed_in?
+      render "public/403", :status => 403
+      return
+    end
+  end
+
   def current_user
     @current_user ||= User.find_by_id(session[:user_id])
   end

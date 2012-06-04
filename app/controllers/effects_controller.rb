@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 class EffectsController < ApplicationController
+  before_filter :require_sign_in, :only => [:new, :edit, :create, :update, :edit_tags]
+
   def show
     @effect = Effect.find(params[:id])
 
@@ -15,6 +17,11 @@ class EffectsController < ApplicationController
 
   def edit
     @effect = Effect.find(params[:id])
+
+    unless @effect.user == current_user
+      render "public/403", :status => 403
+      return
+    end
 
     @title = "エフェクトを編集する"
   end
@@ -41,6 +48,12 @@ class EffectsController < ApplicationController
 
   def update
     @effect    = Effect.find(params[:id])
+
+    unless @effect.user == current_user
+      render "public/403", :status => 403
+      return
+    end
+
     parameters = params[:effect]
     tags       = parameters.delete(:tags).split(/\s+/)
 

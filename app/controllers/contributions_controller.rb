@@ -1,4 +1,6 @@
 class ContributionsController < ApplicationController
+  before_filter :require_sign_in
+
   def create
     parameters = params[:contribution]
 
