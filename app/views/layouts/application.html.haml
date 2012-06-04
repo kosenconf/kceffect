@@ -1,8 +1,12 @@
 !!! 5
 %html
   %head
+    - title = [@title, "高専カンファレンスエフェクト #kosenconf"].compact.join(" - ")
+    - image       = @og_image       || (root_url + "square.png")
+    - description = @og_description || "高専カンファレンスから生まれた「エフェクト」を集めるサイトです。"
+
     %title
-      = [@title, "高専カンファレンスエフェクト #kosenconf"].compact.join(" - ")
+      = title
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
     %script{ :type => "text/javascript", :src => "http://s.hatena.ne.jp/js/HatenaStar.js" }
@@ -19,6 +23,15 @@
     :javascript
       var embedlyApiKey = "#{Settings.embedly.api_key}";
     = csrf_meta_tags
+
+    %meta{ :charset => "UTF-8" }
+    %meta{ :name => "description", :content => description }
+    %meta{ :name => "keywords",    :content => "高専カンファレンスエフェクト,Kosen Conference Effect,kceffect,高専カンファレンス,Kosen Conference,kosenconf,高専,kosen" }
+    %meta{ :property => "og:type",        :content => "website" }
+    %meta{ :property => "og:site_name",   :content => "高専カンファレンスエフェクト" }
+    %meta{ :property => "og:title",       :content => title }
+    %meta{ :property => "og:image",       :content => image }
+    %meta{ :property => "og:description", :content => description }
 
   %body
     .navbar.navbar-fixed-top
