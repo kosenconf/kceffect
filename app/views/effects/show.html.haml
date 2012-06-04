@@ -5,7 +5,7 @@
   .span8
     %h3
       %i.icon-fire
-      = "#{user.name}のエフェクト"
+      = @title
     = render :partial => "board", :as => :effect, :object => @effect
 
   .span4

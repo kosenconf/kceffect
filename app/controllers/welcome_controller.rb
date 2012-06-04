@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 class WelcomeController < ApplicationController
   def index
     @effects = Effect.order("id DESC").limit(4)
@@ -9,5 +10,6 @@ class WelcomeController < ApplicationController
   end
 
   def about
+    @title = "このサイトについて"
   end
 end

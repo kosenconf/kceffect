@@ -2,7 +2,7 @@
   .span8
     %h3
       %i.icon-tag
-      = "タグ「#{@tag.name}」がつけられたエフェクト"
+      = @title
 
     - @taggings.each do |tagging|
       - effect = tagging.effect

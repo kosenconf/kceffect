@@ -1,6 +1,7 @@
 .row
   .span12
     %h3
-      イベントを登録する
+      %i.icon-flag
+      = @title
 
     = render :partial => "form", :as => :event, :object => @event

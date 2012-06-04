@@ -1,6 +1,9 @@
+# -*- coding: utf-8 -*-
 class EventsController < ApplicationController
   def index
     @events = Event.order("start_at, label")
+
+    @title = "これまでに開催されたイベントの一覧"
   end
 
   def show
@@ -15,10 +18,14 @@ class EventsController < ApplicationController
       @contribution = Contribution.find_by_user_id_and_event_id(current_user.id, @event.id)
       @contribution ||= Contribution.new
     end
+
+    @title = "%s (%s)" % [@event.name, @event.label]
   end
 
   def new
     @event = Event.new
+
+    @title = "開催イベントを新しく登録する"
   end
 
   def create
@@ -35,6 +42,8 @@ class EventsController < ApplicationController
 
   def edit
     @event = Event.find_by_label(params[:id])
+
+    @title = "開催イベントの情報を編集する"
   end
 
   def update

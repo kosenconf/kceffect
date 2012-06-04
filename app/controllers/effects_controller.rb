@@ -1,15 +1,22 @@
+# -*- coding: utf-8 -*-
 class EffectsController < ApplicationController
   def show
     @effect = Effect.find(params[:id])
+
+    @title = "#{@effect.user.name}のエフェクト"
   end
 
   def new
     @effect = Effect.new
     @tag    = params[:tag]
+
+    @title = "エフェクトを登録する"
   end
 
   def edit
     @effect = Effect.find(params[:id])
+
+    @title = "エフェクトを編集する"
   end
 
   def create
@@ -56,5 +63,7 @@ class EffectsController < ApplicationController
 
   def edit_tags
     @effect = Effect.find(params[:id])
+
+    @title = "エフェクトのタグを編集する"
   end
 end

@@ -2,7 +2,7 @@
   .span8
     %h3
       %i.icon-tags
-      このエフェクトのタグを編集する
+      = @title
     %p
       登録ユーザであれば誰でもタグを編集できます。
     = render :partial => "effects/board", :as => :effect, :object => @effect, :locals => { :mode => "without-tags" }
