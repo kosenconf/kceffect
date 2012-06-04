@@ -1,6 +1,6 @@
 - tag ||= nil
 
-= form_for effect, :html => { :class => "form-horizontal" } do |form|
+= form_for effect, :html => { :class => "form-horizontal effect-form" } do |form|
   - if effect.errors.any?
     .alert.alert-error
       %ul
@@ -32,6 +32,14 @@
       .controls
         = form.text_field :tags, :class => "span6", :value => (tag || effect.tags.map(&:name).join(" "))
         %p.help-block
-          このエフェクトに関連するタグを付与して整理することができます。タグはスペース区切りで入力してください。
+          このエフェクトに関連するタグを付与して整理に役立てることができます。タグはスペース区切りで入力してください。
+        %p.help-block
+          下記のタグの一覧から選択して入力することもできます。
+        %p.help-block
+          - Tag.order("category DESC, name").each do |tag|
+            %span.tag-checker
+              = tag.name
     .form-actions
       = form.submit "保存する", :class => "btn"
+
+= javascript_include_tag "effect-form"

@@ -4,6 +4,7 @@ gem "rails"
 
 gem "jquery-rails"
 gem "haml-rails"
+gem "underscore-rails"
 gem "twitter-bootstrap-rails"
 gem "font-awesome-rails"
 
