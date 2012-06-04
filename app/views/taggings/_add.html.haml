@@ -1,0 +1,4 @@
+= form_for tagging, :remote => true do |form|
+  = form.hidden_field :effect_id, :value => tagging.effect_id
+  = text_field_tag :tag
+  = form.submit "追加する", :class => "btn"

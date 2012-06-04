@@ -9,5 +9,6 @@
  *= require events
  *= require users
  *= require tags
+ *= require taggings
  *= require welcome
 */

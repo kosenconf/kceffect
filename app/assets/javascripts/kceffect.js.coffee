@@ -32,6 +32,15 @@
 
     callback(result)
 
+$(".new_tagging").live "ajax:success", (event, data) ->
+  form = $(data.form)
+  tag  = $(data.tag).hide()
+  $(this).replaceWith(form)
+  tag.prependTo($(".tags")).fadeIn(1000)
+
+$(".link-to-delete-tagging").live "ajax:success", (event, data) ->
+  $(this).fadeOut(1000)
+
 $(document).ready ->
   $.embedly.defaults["key"] = embedlyApiKey;
 

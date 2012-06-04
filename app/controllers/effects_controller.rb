@@ -34,11 +34,15 @@ class EffectsController < ApplicationController
   def update
     @effect    = Effect.find(params[:id])
     parameters = params[:effect]
-    tags       = parameters.delete(:tags)
+    tags       = parameters.delete(:tags).split(/\s+/)
 
     @effect.update_attributes(parameters)
 
-    tags.split(/\s+/).each do |tag_name|
+    @effect.taggings.each do |tagging|
+      tagging.destroy unless tags.include? tagging.tag.name
+    end
+
+    tags.each do |tag_name|
       tag     = Tag.where(:name => tag_name).first_or_create
       tagging = Tagging.where(:tag_id => tag.id, :effect_id => @effect.id).first_or_create(:user_id => current_user.id)
     end
@@ -48,5 +52,9 @@ class EffectsController < ApplicationController
     else
       render :action => "edit"
     end
+  end
+
+  def edit_tags
+    @effect = Effect.find(params[:id])
   end
 end

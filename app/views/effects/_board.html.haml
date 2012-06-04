@@ -1,3 +1,5 @@
+- mode ||= nil
+
 .effect-board{ :class => "effect-#{effect.id}" }
   .head
     - user = effect.user
@@ -5,13 +7,18 @@
     = link_to user.name, user
     - if current_user == user
       \/
-      = link_to "編集する", edit_effect_path(effect)
+      = link_to "エフェクトを編集する", edit_effect_path(effect)
     .date
       %span.badge
         %i.icon-calendar
         = effect.effected_at.to_s(:ymd)
-    .tags
-      = render :partial => "tags/label", :as => :tag, :collection => effect.tags.order("category DESC")
+    - unless mode == "without-tags"
+      .tags
+        = render :partial => "tags/label", :as => :tag, :collection => effect.tags.order("category DESC, name")
+        - if signed_in?
+          = link_to tags_edit_effect_path(effect) do
+            %i.icon-tag
+            タグを編集する
   .body
     - if effect.comment.present?
       .comment

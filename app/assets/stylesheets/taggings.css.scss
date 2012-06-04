@@ -1,0 +1,25 @@
+.new_tagging {
+  margin: 0;
+
+  input {
+    vertical-align: top;
+  }
+}
+
+.link-to-delete-tagging {
+  display: block;
+  padding: 5px 10px;
+
+  .caption {
+    display: none;
+  }
+}
+
+.link-to-delete-tagging:hover {
+  background-color: #fff;
+  text-decoration: none;
+
+  .caption {
+    display: inline;
+  }
+}
