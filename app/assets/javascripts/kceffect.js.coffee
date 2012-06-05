@@ -41,7 +41,15 @@ $(".new_tagging").live "ajax:success", (event, data) ->
 $(".link-to-delete-tagging").live "ajax:success", (event, data) ->
   $(this).fadeOut(1000)
 
+$(".link-to-favorite, .link-to-unfavorite").live "ajax:success", (event, data) ->
+  $(".tooltip").hide()
+  icons = $(this).parent().parent().children(".icons")
+  html  = $(data.html)
+  $(this).replaceWith(html)
+  icons.prepend($(data.icon)) if data.icon
+
 $(document).ready ->
   $.embedly.defaults["key"] = embedlyApiKey;
 
   $(".user-cube, .tag-link").tooltip()
+  $(".link-to-favorite, .link-to-unfavorite").tooltip({ placement: "left" })

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120604121135) do
+ActiveRecord::Schema.define(:version => 20120605025802) do
 
   create_table "contributions", :force => true do |t|
     t.integer  "user_id",                       :null => false
@@ -60,6 +60,17 @@ ActiveRecord::Schema.define(:version => 20120604121135) do
   add_index "events", ["end_at"], :name => "index_events_on_end_at"
   add_index "events", ["label"], :name => "index_events_on_label", :unique => true
   add_index "events", ["start_at"], :name => "index_events_on_start_at"
+
+  create_table "favorites", :force => true do |t|
+    t.integer  "effect_id",  :null => false
+    t.integer  "user_id",    :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "favorites", ["effect_id", "user_id"], :name => "index_favorites_on_effect_id_and_user_id", :unique => true
+  add_index "favorites", ["effect_id"], :name => "index_favorites_on_effect_id"
+  add_index "favorites", ["user_id"], :name => "index_favorites_on_user_id"
 
   create_table "taggings", :force => true do |t|
     t.integer  "tag_id",     :null => false

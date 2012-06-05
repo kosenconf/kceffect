@@ -1,0 +1,15 @@
+.link-to-favorite, .link-to-unfavorite {
+  font-size: 24px;
+}
+
+.link-to-favorite:hover, .link-to-unfavorite:hover {
+  text-decoration: none;
+}
+
+.link-to-favorite:hover {
+  color: #ff9b00;
+}
+
+.link-to-unfavorite {
+  color: #ff9b00;
+}

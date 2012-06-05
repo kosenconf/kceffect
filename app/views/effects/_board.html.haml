@@ -36,12 +36,12 @@
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
     %span.hatena-star
   .foot
-    %a.favorite{ :href => root_path, :title => "このエントリをお気に入り登録する" }
-      %i.icon-star-empty
-      Favorite
+    .icons
+      - effect.favorites.order("id DESC").each do |favorite|
+        = render :partial => "users/cube", :as => :user, :object => favorite.user
+    = render :partial => "favorites/button", :as => :effect, :object => effect
 
 :javascript
   preview("#{effect.url}", function(result) {
     $(".effect-#{effect.id} .body .preview-box").empty().append(result);
   });
-  $("a.favorite").tooltip({ placement: "right" })

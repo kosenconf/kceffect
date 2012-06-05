@@ -60,12 +60,23 @@
   }
 
   .foot {
+    min-height: 28px;
     background-color: #f4f4f4;
-    padding: 10px;
+    padding: 10px 10px 5px;
     border-top: 1px solid #ccc;
+    position: relative;
 
-    a {
-      text-decoration: none;
+    .icons {
+      margin-right: 24px;
+
+      img {
+      }
+    }
+
+    .link-to-favorite, .link-to-unfavorite {
+      position: absolute;
+      right: 10px;
+      top: 13px;
     }
   }
 }

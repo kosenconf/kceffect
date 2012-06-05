@@ -142,8 +142,7 @@
         %i.icon-user
         利用しているみなさん
       .user-icons
-        - @users.each do |user|
-          = link_to user_icon(user, 36), user, :class => "user-cube", :title => user.name
+        = render :partial => "users/cube", :as => :user, :collection => @users, :locals => { :size => 36 }
 
     #tags-on-top
       %h3

@@ -1,0 +1,10 @@
+.favorite-button
+  - if signed_in?
+    - favorite = Favorite.find_by_user_id_and_effect_id(current_user.id, effect.id)
+    - if favorite
+      = render :partial => "favorites/unfav", :as => :favorite, :object => favorite, :formats => :html, :handlers => :haml
+    - else
+      = render :partial => "favorites/fav", :as => :effect, :object => effect, :formats => :html, :handlers => :haml
+  - else
+    %span.link-to-favorite{ :title => "サインインすると、エフェクトをお気に入り登録できるようになります" }
+      %i.icon-star
