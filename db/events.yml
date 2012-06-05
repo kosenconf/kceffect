@@ -2,56 +2,62 @@
 
 001tokyo:
   name: 第1回 高専カンファレンス
-  description:
-  url:
+  description: すべてのはじまりとなった記念すべき第1回目の高専カンファレンス
+  url: http://kosenconf.jp/?%E7%AC%AC%E4%B8%80%E5%9B%9E
   turnout: 30
   place: ウノウ株式会社 Unoh Inc.
   address: 東京都渋谷区渋谷3-13-11渋谷TKビル8
   start_at: 2008-06-14 00:00:00 UTC
-  cover_url: http://img.skitch.com/20120520-f2tssjs5nfn7jpdhhebbfp5g8m.jpg
+  cover_url: http://farm8.staticflickr.com/7095/7340279174_d85920cd1b_b.jpg
   cover_original_url: http://www.flickr.com/photos/kawataso/2579454082/
   cover_original_author: kawataso
 002hokkaido:
   name: 高専カンファレンス in 北海道
-  description:
-  url:
+  description: 初の地方開催は北海道で！テーマは「私の歩んだ高専道」
+  url: http://kosenconf.jp/?%E9%AB%98%E5%B0%82%E3%82%AB%E3%83%B3%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9%20in%20%E5%8C%97%E6%B5%B7%E9%81%93
   turnout: 25
   place: 札幌市産業振興センター セミナールーム3
   address: 札幌市白石区東札幌5条1丁目1－1
   start_at: 2008-09-13 00:00:00 UTC
-  cover_url: http://img.skitch.com/20120520-jieq8ycc38r31tmrj2676eqh7w.jpg
+  cover_url: http://farm8.staticflickr.com/7233/7155076647_aecf6ab0b8_b.jpg
   cover_original_author: kubyaddi
 003tokyo:
   name: 高専カンファレンス2008 Winter in 東京
   description: テーマ「The Nature Style」
-  url:
+  url: http://kosenconf.jp/?2008WinterTokyo
   turnout: 55
   place: ミラクル・リナックス
   address: 東京都港区東新橋二丁目4番1号 サンマリーノ汐留5階
   start_at: 2008-12-07 00:00:00 UTC
-  cover_url: http://img.skitch.com/20120520-fw48g3kn1qyy1xsm7ctpwu6by5.jpg
+  cover_url: http://farm8.staticflickr.com/7245/7340279332_c8319bd0ff_b.jpg
   cover_original_url: http://www.flickr.com/photos/kawataso/3088819257/
   cover_original_author: kawataso
 004fukui:
   name: 高専カンファレンス in 福井
-  description:
+  description: 「高専」を会場としたはじめての開催
   url: http://kosenconf.jp/004fukui
   turnout: 60
   place: 福井高専 (福井県鯖江市下司町)
   address: 福井県鯖江市下司町
   start_at: 2009-02-28 00:00:00 UTC
+  cover_url: http://farm9.staticflickr.com/8019/7155088285_4560f18cc7_b.jpg
+  cover_original_url: http://www.flickr.com/photos/earth2001y/3318423755/
+  cover_original_author: earth2001y
 005kyushu:
   name: 高専カンファレンス in 九州
   description:
-  url:
+  url: http://kosenconf.jp/005kyushu
   turnout: 65
   place: 久留米工業高等専門学校
   address: 福岡県久留米市小森野1丁目1-1
   start_at: 2009-05-16 00:00:00 UTC
+  cover_url: http://farm8.staticflickr.com/7094/7340303144_6a3f11bbaa_b.jpg
+  cover_original_url: http://www.flickr.com/photos/earth2001y/3546147560/
+  cover_original_author: earth2001y
 006tokyo:
   name: 東京 第3回 LT
   description:
-  url:
+  url: http://kosenconf.jp/?%E6%9D%B1%E4%BA%AC%20%E7%AC%AC3%E5%9B%9E%20LT
   turnout: 20
   place: 株式会社オプティム
   address: 東京都港区芝 5-27-1 三田SSビル 3F
@@ -59,7 +65,7 @@
 008tohoku:
   name: 高専カンファレンス in 東北
   description:
-  url:
+  url: http://kosenconf.jp/008tohoku
   turnout: 40
   place: 福島工業高等専門学校
   address: 福島県いわき市平上荒川字長尾30
@@ -67,15 +73,18 @@
 009tokyo:
   name: 高専カンファレンス 2009秋 in 東京
   description:
-  url:
+  url: http://kosenconf.jp/?2009AutumnTokyo
   turnout: 200
   place: 東京都立産業技術高等専門学校 荒川キャンパス
   address: 東京都荒川区南千住8丁目17-1
   start_at: 2009-11-07 00:00:00 UTC
+  cover_url: http://farm8.staticflickr.com/7236/7155155687_a91e0dd3bf_b.jpg
+  cover_original_url: http://www.flickr.com/photos/earth2001y/4084745871/
+  cover_original_author: earth2001y
 010hokkaido:
   name: 高専カンファレンス in 北海道2
   description:
-  url:
+  url: http://kosenconf.jp/?%E9%AB%98%E5%B0%82%E3%82%AB%E3%83%B3%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9%20in%20%E5%8C%97%E6%B5%B7%E9%81%932
   turnout: 50
   place: 苫小牧工業高等専門学校
   address: 北海道苫小牧市字錦岡443
@@ -83,51 +92,60 @@
 011nagano:
   name: 高専カンファレンス in 長野
   description:
-  url:
+  url: http://kosenconf.jp/?%E9%AB%98%E5%B0%82%E3%82%AB%E3%83%B3%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9%20in%20%E9%95%B7%E9%87%8E
   turnout: 100
   place: 長野工業高等専門学校
   address: 長野県長野市徳間716
   start_at: 2009-12-19 00:00:00 UTC
-  cover_url: http://img.skitch.com/20120604-rdj7f35srmhkyms21t7h2tk8q8.jpg
+  cover_url: http://farm9.staticflickr.com/8147/7155076769_8cb930642b_b.jpg
   cover_original_url: http://www.flickr.com/photos/kawataso/4196873679/
   cover_original_author: kawataso
 012hachinohe:
   name: 高専カンファレンス in 八戸
   description:
-  url:
+  url: http://kosenconf.jp/?%E9%AB%98%E5%B0%82%E3%82%AB%E3%83%B3%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9%20in%20%E5%85%AB%E6%88%B8
   turnout: 30
   place: 八戸工業高等専門学校
   address: 青森県八戸市大字田面木字上野平16-1
   start_at: 2010-01-30 00:00:00 UTC
+  cover_url: http://farm8.staticflickr.com/7215/7340368736_b88ef8769a_b.jpg
+  cover_original_url: http://www.flickr.com/photos/kawataso/4317241808/
+  cover_original_author: kawataso
 013salesio:
   name: 高専カンファレンス in サレジオ
   description:
-  url:
+  url: http://kosenconf.jp/?%E9%AB%98%E5%B0%82%E3%82%AB%E3%83%B3%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9%20in%20%E3%82%B5%E3%83%AC%E3%82%B8%E3%82%AA
   turnout: 200
   place: サレジオ工業高等専門学校
   address: 東京都町田市小山ヶ丘4-6-8
   start_at: 2010-04-24 00:00:00 UTC
-  cover_url: http://img.skitch.com/20120528-k7yt6au64f3w8gxrkub1h7maga.jpg
+  cover_url: http://farm8.staticflickr.com/7236/7155076823_cfab26322a_b.jpg
 014tokyo:
   name: 高専カンファレンス 2010秋 in 東京
   description:
-  url:
+  url: http://kosenconf.jp/?014tokyo
   turnout: 200
   place: 東京都立産業技術高等専門学校 荒川キャンパス
   address: 東京都荒川区南千住8-17-1
   start_at: 2010-10-02 00:00:00 UTC
+  cover_url: http://farm8.staticflickr.com/7218/7340374232_72b11c7c00_b.jpg
+  cover_original_url: http://www.flickr.com/photos/earth2001y/5046273389/
+  cover_original_author: earth2001y
 015nara:
   name: 高専カンファレンス in 奈良
   description:
-  url:
+  url: http://kosenconf.jp/?015nara
   turnout: 80
   place: 奈良工業高等専門学校
   address: 奈良県大和郡山市矢田町22
   start_at: 2010-07-17 00:00:00 UTC
+  cover_url: http://farm8.staticflickr.com/7212/7155178143_05eb31869a_b.jpg
+  cover_original_url: http://www.flickr.com/photos/kawataso/4818434674/
+  cover_original_author: kawataso
 016oita:
   name: 高専カンファレンス in 九州～大分
-  description:
-  url:
+  description: テーマ「あなたの夢の話、聞かせてください」
+  url: http://kosenconf.jp/?%E9%AB%98%E5%B0%82%E3%82%AB%E3%83%B3%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9%20in%20%E4%B9%9D%E5%B7%9E%EF%BD%9E%E5%A4%A7%E5%88%86
   turnout: 0
   place: 大分工業高等専門学校
   address: 大分県大分市牧1666
@@ -142,50 +160,50 @@
   start_at: 2010-08-07 00:00:00 UTC
 018joshi-tokyo:
   name: 高専女子カンファレンス in 東京
-  description:
-  url:
+  description: テーマ「女子による、女子の為のカンファ」
+  url: http://kosenconf.jp/?%E9%AB%98%E5%B0%82%E5%A5%B3%E5%AD%90%E3%82%AB%E3%83%B3%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9in%E6%9D%B1%E4%BA%AC
   turnout: 17
   place: 喫茶室ルノアール新宿区役所横店
   address: 東京都新宿区歌舞伎町1-3-5相模ビル2階
-  start_at: 2010-09-25 00:00:00 UTC
+  start_at: 2010-09-25 01:00:00 UTC
 019kyoto:
   name: 高専カンファレンス in 京都
   description:
-  url:
+  url: http://kosenconf.jp/?019kyoto
   turnout: 64
   place: 京都高度技術研究所
   address: 京都府京都市下京区中堂寺南町134
   start_at: 2010-11-13 00:00:00 UTC
 020salesio:
   name: 高専カンファレンス in サレジオ2
-  description:
-  url:
+  description: 「ドラ娘コンテスト」開催
+  url: http://kosenconf.jp/?020salesio
   turnout: 120
   place: サレジオ工業高等専門学校 サレジアンホール
   address: 東京都町田市小山ヶ丘4丁目6-8
   start_at: 2011-02-12 00:00:00 UTC
-  cover_url: http://img.skitch.com/20120528-dqwnxab51ppamajmh8gp9a1g17.jpg
+  cover_url: http://farm8.staticflickr.com/7235/7340279660_d2686bb813_b.jpg
 021numazu:
   name: 高専カンファレンス in 沼津
   description:
-  url:
+  url: http://kosenconf.jp/?021numazu
   turnout: 64
   place: 沼津高専 図書館
   address: 静岡県沼津市大岡3600
   start_at: 2010-12-18 00:00:00 UTC
-  cover_url: http://img.skitch.com/20120604-89itijt52di1nui4x7ri1s21aj.jpg
+  cover_url: http://farm8.staticflickr.com/7074/7155076917_bec5228d8e_b.jpg
 022kobe:
   name: 高専カンファレンス in 神戸
   description:
-  url:
+  url: http://kosenconf.jp/?022kobe
   turnout: 43
   place: 大学共同利用施設UNITY 第3セミナー室
   address: 神戸市西区学園西町1丁目1-1 ユニバープラザ2F
   start_at: 2011-01-08 00:00:00 UTC
 023shikoku:
   name: 高専カンファレンス in 四国
-  description:
-  url:
+  description: テーマ「はばたけ地方の高専生」
+  url: http://kosenconf.jp/?023shikoku
   turnout: 19
   place: 新居浜工業高等専門学校
   address: 愛媛県新居浜市八雲町7-1
@@ -193,31 +211,31 @@
 024north-tohoku:
   name: 高専カンファレンス in 北東北
   description:
-  url:
+  url: http://kosenconf.jp/?024north-tohoku
   turnout: 17
   place: いわて県民情報交流センター
   address: 岩手県盛岡市盛岡駅西通1丁目7-1
-  start_at: 2011-01-22 00:00:00 UTC
+  start_at: 2011-01-22 01:00:00 UTC
 025spa:
   name: 高専カンファレンス in 鉱泉
   description:
-  url:
+  url: http://kosenconf.jp/?025spa
   turnout: 0
   place: 伊東温泉
   address: 伊東温泉
-  start_at: 2011-01-22 00:00:00 UTC
+  start_at: 2011-01-22 02:00:00 UTC
 026osaka:
   name: 高専カンファレンス in 大阪
   description:
-  url:
+  url: http://kosenconf.jp/?026osaka
   turnout: 61
   place: 大阪府立大学工業高等専門学校
   address: 大阪府寝屋川市幸町26-12
   start_at: 2011-08-27 00:00:00 UTC
 027hokurikurb:
   name: Hokuriku.rb x 高専カンファレンス
-  description:
-  url:
+  description: 北陸エンジニアグループの Hokuriku.rb との合同開催
+  url: http://kosenconf.jp/?027hokurikurb
   turnout: 62
   place: 石川工業高等専門学校
   address: 石川県河北郡津幡町字北中条タ-1
@@ -225,7 +243,7 @@
 028mie:
   name: 高専カンファレンス in 三重
   description:
-  url:
+  url: http://kosenconf.jp/?028mie
   turnout: 65
   place: 三重大学工学部17番教室
   address: 三重県津市栗真町屋町1577
@@ -233,22 +251,22 @@
 030joshi-tokyo:
   name: 高専女子カンファレンス2
   description:
-  url:
+  url: http://kosenconf.jp/?030joshi-tokyo
   turnout: 19
   place: チームラボ株式会社 TEAMLAB★INC
   address: 東京都文京区本郷4-9-22 本郷フジビル2F
   start_at: 2011-06-25 00:00:00 UTC
 031sciences:
   name: つくば理学カンファレンス
-  description:
-  url:
+  description: 理学をテーマにしたプレゼン型勉強会
+  url: http://kosenconf.jp/?031sciences
   turnout: 35
   place: 筑波大学3A203教室
   address: 茨城県つくば市天王台1丁目1-1
   start_at: 2011-10-08 00:00:00 UTC
 032ibaraki:
   name: 高専カンファレンス in 茨城
-  description:
+  description: テーマ「カンファで繋がる１つの輪」
   url: http://kosenconf.jp/?032ibaraki
   turnout: 55
   place: 茨城工業高等専門学校 第3教室棟大教室
@@ -256,23 +274,23 @@
   start_at: 2011-10-29 00:00:00 UTC
 033careers:
   name: 高専カンファレンス for careers
-  description:
-  url:
+  description: 高専生活は楽しい！でも、時には自分の進路や「はたらく」という事について考えてみるのはどうだろう？
+  url: http://kosenconf.jp/?033careers
   turnout: 10
   place: 久留米工業高等専門学校 記念館 会議室
   address: 福岡県久留米市小森野1丁目1-1
   start_at: 2011-06-12 00:00:00 UTC
 034nagano:
   name: 高専カンファレンス in 長野2
-  description:
-  url:
+  description: テーマ「ルネッサンス」
+  url: http://kosenconf.jp/?034nagano
   turnout: 126
   place: 長野工業高等専門学校
   address: 長野県長野市徳間716
   start_at: 2011-07-16 00:00:00 UTC
 035nagaoka:
   name: 高専カンファレンス in 長岡
-  description: hello kosenconf!
+  description: Hello Kosenconf!
   url: http://kosenconf.jp/?035nagaoka
   turnout: 84
   place: 長岡工業高等専門学校
@@ -288,36 +306,39 @@
   start_at: 2011-10-22 00:00:00 UTC
 037matsue:
   name: 高専カンファレンス in 松江
-  description:
-  url:
+  description: テーマ「縁結び」
+  url: http://kosenconf.jp/?037matsue
   turnout: 60
   place: 松江テルサ 中会議室
   address: 松江市朝日町478-18
   start_at: 2011-09-24 00:00:00 UTC
-  cover_url: http://img.skitch.com/20120527-gh2yysearmjmit21s97sya5n9t.jpg
+  cover_url: http://farm8.staticflickr.com/7240/7155077091_6365f6bb3b_b.jpg
 038tokyo:
   name: 新春・高専カンファレンス2012 in 東京
-  description: 2012/1/14~15 (二日開催)
+  description: テーマ「つながり」
   url: http://kosenconf.jp/?038tokyo
   turnout: 264
   place: 都立産業技術高専荒川キャンパス
   address: 東京都荒川区南千住8-17-1
   start_at: 2012-01-14 00:00:00 UTC
   end_at: 2012-01-15 00:00:00 UTC
+  cover_url: http://farm8.staticflickr.com/7084/7155137945_72cae68845_b.jpg
+  cover_original_url: http://www.flickr.com/photos/earth2001y/6701298461/
+  cover_original_author: earth2001y
 039oyama:
   name: 高専カンファレンス in 小山
-  description:
-  url:
+  description: テーマ「あなたの最先端」
+  url: http://kosenconf.jp/?039oyama
   turnout: 53
   place: 小山工業高等専門学校サテライトキャンパス・とちぎ蔵の街観光館
   address: 栃木市万町4-1
   start_at: 2011-09-25 00:00:00 UTC
-  cover_url: http://img.skitch.com/20120528-ca966bcefwu4q8mbt7ps3gq4sg.jpg
+  cover_url: http://farm8.staticflickr.com/7242/7340279836_a1515419e6_b.jpg
   cover_original_url: http://www.flickr.com/photos/tochikuji/6186176356/
   cover_original_author: tochikuji
 040joshi-ishikawa:
   name: 高専女子カンファレンス3 in 石川
-  description: テーマ：「わたしのまちの高専ライフ」
+  description: テーマ「わたしのまちの高専ライフ」
   url: http://kosenconf.jp/?040joshi-ishikawa
   turnout: 11
   place: 石川県金沢市 ITビジネスプラザ武蔵
@@ -326,7 +347,7 @@
 041rbcn:
   name: ロボコニスト高専カンファレンス
   description:
-  url:
+  url: http://kosenconf.jp/?041rbcn
   turnout: 28
   place: 墨田区中小企業センター 5階 会議室2・3
   address: 東京都墨田区文花一丁目19番1号
@@ -339,6 +360,9 @@
   place: ソフトピアジャパン ドリーム･コア
   address: 岐阜県大垣市今宿6-52-16
   start_at: 2012-02-04 00:00:00 UTC
+  cover_url: http://farm9.staticflickr.com/8016/7155125557_8680620f9d_b.jpg
+  cover_original_url: http://www.flickr.com/photos/yumemitsuki/6827788073/
+  cover_original_author: yumemitsuki
 044maizuru:
   name: 高専カンファレンス in 舞鶴
   description:
@@ -347,26 +371,27 @@
   place: 舞鶴市総合文化会館
   address: 京都府舞鶴市字浜2021番地
   start_at: 2011-12-22 00:00:00 UTC
+  cover_url: http://farm9.staticflickr.com/8165/7155145899_622c8efa69_b.jpg
 045tokyo:
   name: 高専カンファレンス in 東京
-  description:
+  description: 参加者全員発表
   url: http://kc045tokyo.heroku.com/
   turnout: 50
   place: 株式会社オプティム
   address: 東京都港区港南1丁目6番34号 品川イースト
   start_at: 2012-04-14 00:00:00 UTC
-  cover_url: http://img.skitch.com/20120528-xt8iqnq4tik5igm9kxq6328w5g.jpg
+  cover_url: http://farm8.staticflickr.com/7240/7340280006_f8dce87f53_b.jpg
   cover_original_url: http://www.flickr.com/photos/earth2001y/7080101361/
   cover_original_author: earth2001y
 047tokyo:
   name: t-Cup Party
-  description:
+  description: 時の甲子園(t-Cup Challenge)入賞チームの歓迎イベント
   url: http://kosenconf.jp/?047tokyo
   turnout: 24
   place: pixiv株式会社
   address: 東京都渋谷区千駄ヶ谷4-23-5 JPR千駄ヶ谷ビル5F
   start_at: 2012-03-10 00:00:00 UTC
-  cover_url: http://img.skitch.com/20120528-dui85gd87m6f35yh52npcwd1ru.jpg
+  cover_url: http://farm9.staticflickr.com/8165/7340279914_d633f41755_b.jpg
   cover_original_url: http://www.flickr.com/photos/igaiga/6989832749/
   cover_original_author: igaiga
 054nara:
@@ -377,3 +402,6 @@
   place: 奈良女子大学 北棟2階N202教室
   address: 奈良県奈良市北魚屋東町
   start_at: 2012-05-12 00:00:00 UTC
+  cover_url: http://farm8.staticflickr.com/7232/7155076457_b5ed7643fc_b.jpg
+  cover_original_url: "http://picasaweb.google.com/115745905993744631783/In22012512Kosenconf054nara#5741982689458191218"
+  cover_original_author: 夢深月秋海
