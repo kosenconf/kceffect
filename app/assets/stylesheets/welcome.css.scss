@@ -5,7 +5,7 @@
   width: 936px;
   background-color: #333;
   margin-top: -32px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   border: 2px solid #000;
   position: relative;
 
@@ -65,6 +65,11 @@
   .photo6 { left:   0px; top: 312px; }
   .photo7 { left: 312px; top: 312px; }
   .photo8 { left: 624px; top: 312px; }
+}
+
+#notice {
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 #intro {
