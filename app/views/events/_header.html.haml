@@ -21,6 +21,12 @@
             %i.icon-bookmark
           %td
             = "kosenconf-#{event.label}"
+        - if event.turnout > 0
+          %tr
+            %td.icon
+              %i.icon-user
+            %td
+              = "参加者#{event.turnout}人"
         - if event.description.present?
           %tr
             %td.icon
