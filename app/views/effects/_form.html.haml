@@ -36,7 +36,7 @@
         %p.help-block
           下記のタグの一覧から選択して入力することもできます。
         %p.help-block.tag-list
-          - Tag.order("category DESC, name").each do |tag|
+          - Tag.order("category, name").each do |tag|
             %span.tag-selector
               = tag.name
     .form-actions

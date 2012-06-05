@@ -13,5 +13,5 @@
       タグを追加/削除する
     = render :partial => "taggings/add", :as => :tagging, :object => Tagging.new(:effect_id => @effect.id)
     .tags
-      - @effect.tags.order("category DESC, name").each do |tag|
+      - @effect.tags.order("category, name").each do |tag|
         = render :partial => "taggings/remove", :as => :tagging, :object => tag.taggings.where(:effect_id => @effect.id).first

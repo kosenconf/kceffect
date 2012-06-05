@@ -14,7 +14,7 @@
         = effect.effected_at.to_s(:ymd)
     - unless mode == "without-tags"
       .tags
-        = render :partial => "tags/label", :as => :tag, :collection => effect.tags.order("category DESC, name")
+        = render :partial => "tags/label", :as => :tag, :collection => effect.tags.order("category, name")
         - if signed_in?
           = link_to tags_edit_effect_path(effect) do
             %i.icon-tag

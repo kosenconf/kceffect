@@ -17,7 +17,7 @@
         %li
           = user_icon(user, 16)
           = link_to "#{user.name}さんのエフェクト(#{user.effects.count}個)", user
-      - tags.order("category DESC, name").each do |tag|
+      - tags.order("category, name").each do |tag|
         - if tag.effects.count > 1
           %li
             - if tag.event?
