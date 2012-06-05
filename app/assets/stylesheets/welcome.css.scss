@@ -83,6 +83,19 @@
   }
 }
 
+#pickups {
+  margin-bottom: 50px;
+
+  ul {
+    list-style: none;
+    margin: 0 0 0 15px;
+
+    li {
+      margin-bottom: 10px;
+    }
+  }
+}
+
 #events-on-top, #users-on-top {
   margin-bottom: 50px;
 }
