@@ -1,13 +1,41 @@
 .row
+  .span12
+    .user-header
+      .icon
+        = user_icon(@user, 48)
+      .main
+        %h2
+          = @user.name
+        .profile
+          = @user.profile
+
+.row
   .span8
     %h3
-      %i.icon-user
-      = @title
-    = render :partial => "effects/board", :as => :effect, :collection => @effects
+      %i.icon-fire
+      登録したエフェクト
+    - if @effects.empty?
+      - if @user == current_user
+        .alert.alert-info
+          右上の「メニュー」から「エフェクトを載せる」を選び、あなたのエフェクトを載せてみよう！自分が書いたブログのエントリはもちろんのこと、他の人が書いたエントリや他の人の発表の動画を指して「こんな影響を受けた！」と登録するのも歓迎です。
+      - else
+        %p
+          まだ、登録されているエフェクトはありません。
+
+    - else
+      = render :partial => "effects/board", :as => :effect, :collection => @effects
 
   .span4
-    - unless @contributions.empty?
-      %h3
-        %i.icon-flag
-        関わったイベント
+    %h3
+      %i.icon-flag
+      関わったイベント
+    - if @contributions.empty?
+      - if @user == current_user
+        .alert.alert-info
+          = link_to "開催イベントの一覧", events_path
+          からあなたが関わったイベントを見つけて、どんな関わり方をしたのか登録しよう！
+      - else
+        %p
+          まだ、登録されていません。
+    - else
       = render :partial => "contributions/line", :as => :contribution, :collection => @contributions

@@ -8,19 +8,15 @@ class SessionsController < ApplicationController
     access_token  = auth["credentials"]["token"]
     access_secret = auth["credentials"]["token"]
 
-    user = User.find_by_twitter_id(twitter_id)
+    user = User.find_by_twitter_id(twitter_id) || User.new
 
-    unless user
-      user = User.new
-      user.twitter_id    = twitter_id
-      user.name          = name
-      user.icon_url      = icon_url
-      user.profile       = profile
-      user.access_token  = access_token
-      user.access_secret = access_secret
-
-      user.save!
-    end
+    user.twitter_id    = twitter_id
+    user.name          = name
+    user.icon_url      = icon_url
+    user.profile       = profile
+    user.access_token  = access_token
+    user.access_secret = access_secret
+    user.save
 
     self.current_user = user
 
