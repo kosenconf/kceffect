@@ -12,6 +12,12 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def return_here_after_sign_in
+    unless signed_in?
+      session[:return_to] = request.fullpath
+    end
+  end
+
   def current_user
     @current_user ||= User.find_by_id(session[:user_id])
   end

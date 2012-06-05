@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 class EventsController < ApplicationController
-  before_filter :require_sign_in, :only => [:new, :create, :edit, :update]
+  before_filter :require_sign_in,           :only => [:new, :create, :edit, :update]
+  before_filter :return_here_after_sign_in, :only => [:index, :show]
 
   def index
     @events = Event.order("start_at, label")

@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 class UsersController < ApplicationController
+  before_filter :return_here_after_sign_in, :only => [:show]
+
   def show
     @user          = User.find_by_name(params[:id])
     @effects       = @user.effects.order("effected_at DESC")

@@ -4,25 +4,31 @@ class SessionsController < ApplicationController
     twitter_id    = auth["uid"]
     name          = auth["info"]["nickname"]
     icon_url      = auth["info"]["image"]
+    profile       = auth["info"]["description"]
     access_token  = auth["credentials"]["token"]
     access_secret = auth["credentials"]["token"]
 
-    if user = User.find_by_twitter_id(twitter_id)
-      self.current_user = user
-      redirect_to root_path
-      return
+    user = User.find_by_twitter_id(twitter_id)
+
+    unless user
+      user = User.new
+      user.twitter_id    = twitter_id
+      user.name          = name
+      user.icon_url      = icon_url
+      user.profile       = profile
+      user.access_token  = access_token
+      user.access_secret = access_secret
+
+      user.save!
     end
 
-    user = User.new
-    user.twitter_id    = twitter_id
-    user.name          = name
-    user.icon_url      = icon_url
-    user.access_token  = access_token
-    user.access_secret = access_secret
-
-    user.save!
     self.current_user = user
-    redirect_to root_path
+
+    if session[:return_to]
+      redirect_to session.delete(:return_to)
+    else
+      redirect_to root_path
+    end
   end
 
   def destroy
