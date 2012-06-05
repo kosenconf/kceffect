@@ -1,0 +1,8 @@
+.user-header
+  .icon
+    = link_to user_icon(user, 48), user
+  .main
+    %h2
+      = link_to user.name, user
+    .profile
+      = user.profile

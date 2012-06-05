@@ -11,6 +11,7 @@
       この開催に関するエフェクトは、まだ登録されていません。
     - else
       = render :partial => "effects/board", :as => :effect, :collection => @taggings.map(&:effect)
+    = paginate @taggings
 
   .span4
     - if signed_in?

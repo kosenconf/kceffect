@@ -8,6 +8,7 @@ gem "underscore-rails"
 gem "twitter-bootstrap-rails"
 gem "font-awesome-rails"
 
+gem "kaminari"
 gem "i18n_generators"
 gem "active_decorator"
 gem "settingslogic"

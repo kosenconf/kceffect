@@ -1,12 +1,17 @@
 Kceffect::Application.routes.draw do
-  resources :users,         :only => [:show]
   resources :events,        :only => [:index, :show, :new, :create, :edit, :update]
   resources :contributions, :only => [:create, :update]
   resources :tags,          :only => [:show]
   resources :taggings,      :only => [:create, :destroy]
   resources :favorites,     :only => [:create, :destroy]
+
   resources :effects,       :only => [:show, :new, :create, :edit, :update] do
     get "/tags/edit", :on => :member, :to => "effects#edit_tags"
+  end
+
+  resources :users,         :only => [:show] do
+    get "/effects",   :on => :member, :to => "users#effects"
+    get "/favorites", :on => :member, :to => "users#favorites"
   end
 
   get    "/auth/twitter",          :as => "sign_in"

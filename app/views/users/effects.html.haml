@@ -16,22 +16,8 @@
           %p
             まだ、登録されているエフェクトはありません。
       - else
-        = render :partial => "effects/board", :as => :effect, :collection => @effects.limit(5)
-        - if @effects.count > 5
-          .more-link
-            = link_to "エフェクトをもっと見る (全#{@effects.count}個)", effects_user_path(@user)
-
-    .users-favorites
-      %h3
-        %i.icon-star
-        お気に入りエフェクト
-      - if @favorites.empty?
-        まだ、お気に入り登録されているエフェクトはありません。
-      - else
-        = render :partial => "effects/board", :as => :effect, :collection => @favorites.limit(5).map(&:effect)
-        - if @favorites.count > 5
-          .more-link
-            = link_to "お気に入りをもっと見る (全#{@favorites.count}個)", favorites_user_path(@user)
+        = render :partial => "effects/board", :as => :effect, :collection => @effects
+      = paginate @effects
 
   .span4
     %h3

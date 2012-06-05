@@ -10,9 +10,11 @@ class EventsController < ApplicationController
   end
 
   def show
+    @page = params[:page]
+
     @event         = Event.find_by_label(params[:id])
     @contributions = @event.contributions.order("id DESC")
-    @taggings      = Tag.find_by_name(@event.label).taggings.order("id DESC")
+    @taggings      = Tag.find_by_name(@event.label).taggings.order("id DESC").page(@page).per(10)
 
     @prev_event = Event.where("start_at < ?", @event.start_at).order("start_at DESC, label").first
     @next_event = Event.where("start_at > ?", @event.start_at).order("start_at ASC,  label").first
