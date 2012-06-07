@@ -82,7 +82,8 @@
 
     %footer
       .container
-        = render :partial => "welcome/widgets"
+        - if @social_footer
+          = render :partial => "welcome/widgets"
         %p
           = Time.now.year
           Team KCEffect

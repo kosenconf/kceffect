@@ -7,6 +7,8 @@ class WelcomeController < ApplicationController
     @tags    = Tag.where(:category => nil).order("id DESC")
 
     @covers  = Event.where("cover_url IS NOT NULL").reject { |e| e.cover_url.blank? }.take(9).map(&:cover_url).shuffle
+
+    @social_footer = true
   end
 
   def about
