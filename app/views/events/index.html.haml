@@ -1,8 +1,50 @@
 .row
   .span12
-    %h3
-      %i.icon-flag
-      = @title
-    .event-banner-box
-      - @events.each_with_index do |event, index|
-        = render :partial => "events/banner", :as => :event, :object => event, :locals => { :mode => index % 2 == 1 ? "right-side" : nil }
+    .events-index
+      %h3
+        %i.icon-flag
+        = @title
+      .stats
+        %i.icon-flag
+        = "全%d開催" % Event.count
+        \/
+        %i.icon-user
+        = "総参加者数 約%d人" % Event.sum(:turnout)
+      .events-in-year
+        .row
+          .span4
+            %h4
+              2008
+            %ul
+              - @events.select { |event| event.start_at.year == 2008 }.each do |event|
+                %li
+                  = link_to event.name, event
+            %h4
+              2009
+            %ul
+              - @events.select { |event| event.start_at.year == 2009 }.each do |event|
+                %li
+                  = link_to event.name, event
+            %h4
+              2010
+            %ul
+              - @events.select { |event| event.start_at.year == 2010 }.each do |event|
+                %li
+                  = link_to event.name, event
+          .span4
+            %h4
+              2011
+            %ul
+              - @events.select { |event| event.start_at.year == 2011 }.each do |event|
+                %li
+                  = link_to event.name, event
+          .span4
+            %h4
+              2012
+            %ul
+              - @events.select { |event| event.start_at.year == 2012 }.each do |event|
+                %li
+                  = link_to event.name, event
+      .event-banner-box
+        - @events.each_with_index do |event, index|
+          = render :partial => "events/banner", :as => :event, :object => event, :locals => { :mode => index % 2 == 1 ? "right-side" : nil }

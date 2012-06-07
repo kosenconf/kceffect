@@ -1,3 +1,16 @@
+.events-index {
+  .stats {
+    font-size: 110%;
+    text-align: right;
+  }
+
+  .stats, .events-in-year {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+}
+
 .event-banner-box {
   .event-banner {
     margin-right: 16px;
