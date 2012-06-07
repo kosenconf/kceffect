@@ -12,6 +12,11 @@
     \/
     %i.icon-calendar
     = event.date
+    - if event.turnout > 0
+      \/
+      %i.icon-user
+      = event.turnout
+
     - if count > 0
       .effect-count
         %i.icon-fire

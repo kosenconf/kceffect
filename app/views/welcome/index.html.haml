@@ -8,16 +8,19 @@
       #stats
         .stat
           .caption
+            %i.icon-flag
             開催イベント数
           .count
             = Event.count
         .stat
           .caption
+            %i.icon-user
             総参加者数
           .count
             = Event.sum(:turnout)
         .stat
           .caption
+            %i.icon-fire
             登録エフェクト
           .count
             = Effect.count
@@ -123,9 +126,6 @@
             %li
               5000枚以上の写真が集まった共有フォトアルバム
 
-
-
-
 #events-on-top
   .row
     .span12
@@ -136,7 +136,9 @@
         - @events.each_with_index do |event, index|
           = render :partial => "events/banner", :as => :event, :object => event, :locals => { :mode => index % 2 == 1 ? "right-side" : nil }
       .more-events
-        = link_to "開催イベントの一覧を見る", events_path
+        = link_to events_path do
+          %i.icon-flag
+          開催イベントの一覧を見る
 
 .row
   .span8
@@ -162,4 +164,6 @@
       - @tags.each do |tag|
         - count = tag.effects.count
         - if count > 0
-          = link_to "%s (%d)" % [tag.name, count], tag, :class => "tag-link", :title => "#{count}個のエフェクトがあります"
+          = link_to tag, :class => "tag-link", :title => "#{count}個のエフェクトがあります" do
+            %i.icon-tag
+            = "%s (%d)" % [tag.name, count]
