@@ -39,9 +39,16 @@
         .container
           %h1
             = link_to root_path, :class => "brand" do
-              %i.icon-fire
               高専カンファレンスエフェクト
-              %i.icon-fire
+          %ul.nav
+            %li
+              = link_to effects_path do
+                %i.icon-fire
+                エフェクト一覧
+            %li
+              = link_to events_path do
+                %i.icon-flag
+                開催イベント一覧
 
           - if signed_in?
             %ul.nav.pull-right
