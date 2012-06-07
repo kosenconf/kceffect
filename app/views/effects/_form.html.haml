@@ -1,5 +1,11 @@
 - tag ||= nil
 
+.alert.alert-info
+  %h4
+    %i.icon-question-sign
+    エフェクトって？
+  あなたが書いたブログ記事の登録はもちろんのこと、他の誰かが書いた記事を読んで「影響を受けた！」「これを見て高専カンファレンスを知った！」なんてものも大歓迎です。ぜひ、どんな影響を受けたのか、一言を添えて載せてみてください。発表資料、発表の動画、ツイートなどなど… あなたと高専カンファレンスの間にあるものを、どんどん登録して共有してください！
+
 = form_for effect, :html => { :class => "form-horizontal effect-form" } do |form|
   - if effect.errors.any?
     .alert.alert-error
@@ -32,10 +38,8 @@
       .controls
         = form.text_field :tags, :class => "span6", :value => (tag || effect.tags.map(&:name).join(" "))
         %p.help-block
-          このエフェクトに関連するタグを付与して整理に役立てることができます。タグはスペース区切りで入力してください。
-        %p.help-block
-          下記のタグの一覧から選択して入力することもできます。
-        %p.help-block.tag-list
+          好きな言葉をタグとして付与して、整理に役立ててみてください。タグはスペース区切りで入力します。下記の一覧からタグをクリックして入力することもできます。
+        %p.help-block.alert
           - Tag.order("category, name").each do |tag|
             %span.tag-selector
               = tag.name

@@ -112,20 +112,16 @@
 }
 
 .effect-form {
-  .tag-list {
-    padding: 5px;
-    border: 1px solid #ccc;
-  }
-
   .tag-selector {
     font-size: 90%;
     margin: 5px 0;
     padding: 3px;
     cursor: pointer;
+    border: 1px solid transparent;
   }
 
   .tag-selector:hover {
-    color: #fff;
-    background-color: #999;
+    background-color: #fff;
+    border: 1px solid #ccc;
   }
 }
