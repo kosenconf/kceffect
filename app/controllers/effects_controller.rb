@@ -2,6 +2,14 @@
 class EffectsController < ApplicationController
   before_filter :require_sign_in, :only => [:new, :edit, :create, :update, :edit_tags]
 
+  def index
+    @page    = params[:page]
+    @effects = Effect.order("id DESC").page(@page).per(10)
+    @tags    = Tag.where(:category => nil).order("id DESC")
+
+    @title = "エフェクトの一覧 (全%d件)" % Effect.count
+  end
+
   def show
     @effect = Effect.find(params[:id])
 

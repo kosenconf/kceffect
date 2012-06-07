@@ -5,7 +5,7 @@ Kceffect::Application.routes.draw do
   resources :taggings,      :only => [:create, :destroy]
   resources :favorites,     :only => [:create, :destroy]
 
-  resources :effects,       :only => [:show, :new, :create, :edit, :update] do
+  resources :effects,       :only => [:index, :show, :new, :create, :edit, :update] do
     get "/tags/edit", :on => :member, :to => "effects#edit_tags"
   end
 
