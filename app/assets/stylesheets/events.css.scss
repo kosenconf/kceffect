@@ -55,7 +55,6 @@
   background-color: #fff;
   margin-bottom: 30px;
   box-shadow: 0 0 3px #999;
-  position: relative;
 
   .cover {
     margin-top: -30px;
@@ -83,6 +82,7 @@
   .event-info {
     padding: 10px 20px;
     border: 1px solid #999;
+    position: relative;
 
     h2 {
       text-shadow: 0px 2px 3px #999;
@@ -102,18 +102,17 @@
         }
       }
     }
-  }
 
-  .control {
-    position: absolute;
-    bottom: 12px;
-    right: 20px;
+    .control {
+      position: absolute;
+      top: 20px;
+      right: 10px;
+    }
 
-    ul {
-      margin: 0;
-      padding: 0;
-      text-align: right;
-      list-style-type: none;
+    .btn {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
     }
   }
 }

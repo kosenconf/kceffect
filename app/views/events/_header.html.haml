@@ -30,7 +30,7 @@
         - if event.description.present?
           %tr
             %td.icon
-              %i.icon-edit
+              %i.icon-play
             %td
               = event.description
         %tr
@@ -49,13 +49,15 @@
               %i.icon-external-link
             %td
               = link_to "公式サイト", event.url, :target => "_blank"
-  .control
-    - if signed_in?
-      %ul
-        %li
-          = link_to "このイベントの情報を編集する", edit_event_path(event)
-        %li
-          = link_to "このイベントに関するエフェクトを登録する", new_effect_path(:tag => event.label)
+    .control
+      - if signed_in?
+        = link_to edit_event_path(event) do
+          %i.icon-edit
+          このイベントの情報を編集する
+      - else
+        (サインインすると、イベントの情報を編集できます)
 
-    - else
-      (サインインすると、イベントの情報を編集できます)
+    - if signed_in?
+      = link_to new_effect_path(:tag => event.label), :class => "btn btn-info" do
+        %i.icon-fire
+        このイベントに関するエフェクトを登録する
