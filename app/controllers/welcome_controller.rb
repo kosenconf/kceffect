@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 class WelcomeController < ApplicationController
   def index
-    @effects = Effect.group(:user_id).order("id DESC").limit(6)
+    @effects = Effect.order("id DESC").uniq! { |e| e[:user_id] }
     @events  = Event.order("start_at DESC").limit(6)
     @users   = User.order("updated_at DESC").limit(100)
     @tags    = Tag.where(:category => nil).order("id DESC")
