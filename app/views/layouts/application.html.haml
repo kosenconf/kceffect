@@ -57,11 +57,6 @@
 
           - if signed_in?
             %ul.nav.pull-right
-              - unless @hide_new_effect_button
-                %li
-                  = link_to new_effect_path, :class => "btn btn-warning btn-new-effect" do
-                    %i.icon-pencil
-                    エフェクトをのせる
               %li.dropdown
                 %a.dropdown-toggle.btn-menu{ "data-toggle" => "dropdown", "href" => "#" }
                   %i.icon-list{ :style => "font-size: 170%;" }
@@ -81,11 +76,18 @@
                       %i.icon-signout
                       サインアウトする
           - else
-            -# %ul.nav.pull-right
-            -#   %li
-            -#     = link_to sign_in_path do
-            -#       %i.icon-twitter-sign
-            -#       Twitterアカウントでサインイン
+            %ul.nav.pull-right
+              %li
+                = link_to sign_in_path do
+                  %i.icon-twitter-sign
+                  サインイン
+          %ul.nav.pull-right
+            - unless @hide_new_effect_button
+              %li
+                - path = signed_in? ? new_effect_path : sign_in_path
+                = link_to path, :class => "btn btn-warning btn-new-effect" do
+                  %i.icon-pencil
+                  エフェクトをのせる
 
     #main
       .container{ :class => @show_timeline ? "timeline" : nil }
