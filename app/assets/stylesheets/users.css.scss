@@ -22,9 +22,16 @@
     margin-left: 60px;
 
     h2 {
+      line-height: 1em;
+      display: inline;
+
       a {
         color: #000;
       }
+    }
+
+    .twitter {
+      padding: 3px 0;
     }
   }
 }
