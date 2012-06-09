@@ -1,9 +1,21 @@
 class ApplicationController < ActionController::Base
+  before_filter :please_sign_in_again
+
   protect_from_forgery
 
   helper_method :current_user, :signed_in?, :sign_out!
 
   protected
+
+  def please_sign_in_again
+    if signed_in?
+      if current_user.access_token == current_user.access_secret
+        sign_out!
+        redirect_to root_path
+        return
+      end
+    end
+  end
 
   def require_sign_in
     unless signed_in?
