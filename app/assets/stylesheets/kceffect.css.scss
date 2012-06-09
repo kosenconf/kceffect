@@ -32,10 +32,18 @@ h3 {
     .dropdown-menu:after {
       right: 25px;
     }
+
+    .dropdown-menu:before {
+      right: 24px;
+    }
   }
 
   .dropdown-menu.pull-right:after {
     right: 25px;
+  }
+
+  .dropdown-menu.pull-right:before {
+    right: 24px;
   }
 
   .nav {
