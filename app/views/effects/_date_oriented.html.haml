@@ -1,0 +1,54 @@
+.effect-date-oriented{ :class => "effect-#{effect.id}" }
+  .date
+    %span.label
+      %i.icon-calendar
+      = effect.effected_at.to_s(:ymd)
+  .main
+    .body
+      .tags
+        = render :partial => "tags/label", :as => :tag, :collection => effect.tags.order("category, name")
+      .comment
+        = effect.comment
+      .link
+        = link_to effect.url, effect.url, :target => "_blank"
+      .popover-box
+        .popover
+          .preview-box
+          .widgets
+            %span.facebook-like
+              :plain
+                <iframe src="//www.facebook.com/plugins/like.php?href=#{CGI.escape(effect.url)}&amp;send=false&amp;layout=button_count&amp;width=120&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21&amp;appId=371618846211228" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:120px; height:21px;" allowTransparency="true"></iframe>
+            %span.twitter-tweet
+              :plain
+                <a href="https://twitter.com/share" class="twitter-share-button" data-url="#{effect.url}" data-via="kosenconf" data-hashtags="kosenconf">Tweet</a>
+                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+            %span.hatena-star
+
+    .foot
+      .icons
+        - effect.favorites.order("id DESC").each do |favorite|
+          = render :partial => "users/cube", :as => :user, :object => favorite.user
+      = render :partial => "favorites/button", :as => :effect, :object => effect
+    .control
+      - if effect.user == current_user
+        = link_to edit_effect_path(effect), :class => "link-to-edit", :title => "このエフェクトを編集する" do
+          %i.icon-edit
+      - if signed_in?
+        = link_to tags_edit_effect_path(effect), :class => "link-to-edit", :title => "タグを編集する" do
+          %i.icon-tag
+      = link_to effect, :class => "link-to-effect", :title => "このエフェクトのパーマリンク" do
+        %i.icon-fire
+
+:javascript
+  preview("#{effect.url}", function(result) {
+    $(".effect-#{effect.id} .main .popover .preview-box").empty().append(result);
+  });
+
+  $(".effect-#{effect.id} .main .body .link a").mouseover(function() {
+    $(".popover").fadeOut(300);
+    $(this).parent().parent().find(".popover").fadeIn(300);
+  });
+
+  $(".popover").live("mouseleave", function() {
+    $(this).fadeOut(300);
+  });

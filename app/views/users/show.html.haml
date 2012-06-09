@@ -1,49 +1,24 @@
-.row
-  .span12
-    = render :partial => "users/header", :as => :user, :object => @user
+.user-timeline
+  .row
+    .span12
+      = render :partial => "users/header", :as => :user, :object => @user
 
-.row
-  .span8
-    .users-effects
+  .row
+    .span8
+      - @effects.each do |effect|
+        = render :partial => "effects/date_oriented", :as => :effect, :object => effect
+
+    .span4
       %h3
-        %i.icon-fire
-        登録したエフェクト
-      - if @effects.empty?
+        %i.icon-flag
+        関わった高専カンファレンス
+      - if @contributions.empty?
         - if @user == current_user
           .alert.alert-info
-            右上の「メニュー」から「エフェクトを載せる」を選び、あなたのエフェクトを載せてみよう！自分が書いたブログのエントリはもちろんのこと、他の人が書いたエントリや他の人の発表の動画を指して「こんな影響を受けた！」と登録するのも歓迎です。
+            = link_to "開催イベントの一覧", events_path
+            からあなたが関わったイベントを見つけて、どんな関わり方をしたのか登録しよう！
         - else
           %p
-            まだ、登録されているエフェクトはありません。
+            まだ、登録されていません。
       - else
-        = render :partial => "effects/board", :as => :effect, :collection => @effects.limit(5)
-        - if @effects.count > 5
-          .more-link
-            = link_to "エフェクトをもっと見る (全#{@effects.count}個)", effects_user_path(@user)
-
-    .users-favorites
-      %h3
-        %i.icon-star
-        お気に入りエフェクト
-      - if @favorites.empty?
-        まだ、お気に入り登録されているエフェクトはありません。
-      - else
-        = render :partial => "effects/board", :as => :effect, :collection => @favorites.limit(5).map(&:effect)
-        - if @favorites.count > 5
-          .more-link
-            = link_to "お気に入りをもっと見る (全#{@favorites.count}個)", favorites_user_path(@user)
-
-  .span4
-    %h3
-      %i.icon-flag
-      関わったイベント
-    - if @contributions.empty?
-      - if @user == current_user
-        .alert.alert-info
-          = link_to "開催イベントの一覧", events_path
-          からあなたが関わったイベントを見つけて、どんな関わり方をしたのか登録しよう！
-      - else
-        %p
-          まだ、登録されていません。
-    - else
-      = render :partial => "contributions/line", :as => :contribution, :collection => @contributions
+        = render :partial => "contributions/line", :as => :contribution, :collection => @contributions
