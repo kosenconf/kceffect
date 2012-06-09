@@ -25,7 +25,7 @@
       %label.control-label
         いつのこと？
       .controls
-        = form.datetime_select :effected_at, { :default => Time.now.beginning_of_day }, :class => "span2"
+        = form.datetime_select :effected_at, { :default => Time.now.beginning_of_day, :use_month_numbers => true }, :class => "span2"
         %p.help-block
           詳細な時刻まで入力する必要はありませんが、ユーザページでは、このデータの新しいものから順にエフェクトが表示されます。
     .control-group
