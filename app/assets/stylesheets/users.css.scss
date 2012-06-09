@@ -1,3 +1,13 @@
+.timeline {
+  margin-top: -28px;
+  padding-top: 28px;
+  margin-bottom: -50px;
+  padding-bottom: 50px;
+  background-image: #{image_url("line.png")};
+  background-repeat: repeat-y;
+  background-position: 20px 0;
+}
+
 .user-header {
   margin-bottom: 30px;
   position: relative;
@@ -12,18 +22,17 @@
     margin-left: 60px;
 
     h2 {
+      line-height: 1em;
+      display: inline;
+
       a {
         color: #000;
       }
     }
-  }
-}
 
-.users-effects, .users-favorites {
-  margin-bottom: 30px;
-
-  .more-link {
-    text-align: right;
+    .twitter {
+      padding: 3px 0;
+    }
   }
 }
 

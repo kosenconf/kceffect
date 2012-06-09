@@ -4,5 +4,6 @@
   .main
     %h2
       = link_to user.name, user
+    = link_to "http://twitter.com/#{user.name}", "http://twitter.com/#{user.name}", :target => "_blank"
     .profile
       = user.profile

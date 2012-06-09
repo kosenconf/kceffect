@@ -17,6 +17,11 @@
             uri: '.body .url a',
             title: '.body .url a',
             container: '.social-widgets .hatena-star'
+          },
+          'div.effect-date-oriented': {
+            uri: '.main .body .link a',
+            title: '.main .body .link a',
+            container: '.main .body .popover-box .popover .widgets .hatena-star'
           }
         }
       };
@@ -83,7 +88,7 @@
             -#       Twitterアカウントでサインイン
 
     #main
-      .container
+      .container{ :class => @show_timeline ? "timeline" : nil }
         = yield
 
     %footer

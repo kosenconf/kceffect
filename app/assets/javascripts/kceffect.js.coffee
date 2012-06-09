@@ -24,7 +24,7 @@
       .append($("<div/>").addClass("thumb").width(resizedWidth)
               .append($("<a/>").attr({ href: (if json.url then json.url else url), title: title, target: "_blank" })
                       .append($("<img/>").attr({ src: json.thumbnail_url }).width(resizedWidth))))
-      .append($("<div/>").addClass("text").css("margin-left", if resizedWidth == 0 then 0 else resizedWidth + defaultThumbnailMargin)
+      .append($("<div/>").addClass("text").css("margin-left", if resizedWidth == 0 then 0 else resizedWidth + defaultThumbnailMargin).css("min-height", resizedHeight)
               .append($("<div/>").addClass("title")
                       .append($("<a/>").attr({ href: url, title: title, target: "_blank" }).text(title)))
               .append($("<div/>").addClass("domain").text(json.provider_url))
@@ -52,4 +52,5 @@ $(document).ready ->
   $.embedly.defaults["key"] = embedlyApiKey;
 
   $(".user-cube, .tag-link").tooltip()
+  $(".link-to-effect, .link-to-edit").tooltip({ placement: "top" })
   $(".link-to-favorite, .link-to-unfavorite").tooltip({ placement: "left" })
