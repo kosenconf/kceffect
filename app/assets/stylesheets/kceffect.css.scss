@@ -4,6 +4,15 @@
   border-radius: $value;
 }
 
+@mixin border-radius-top($value) {
+  -webkit-border-top-left-radius: $value;
+  -webkit-border-top-right-radius: $value;
+  -moz-border-radius-topleft: $value;
+  -moz-border-radius-topright: $value;
+  border-top-left-radius: $value;
+  border-top-right-radius: $value;
+}
+
 body {
   background-color: #f4f4f4;
 }
