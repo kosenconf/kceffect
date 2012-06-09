@@ -68,36 +68,7 @@
   text-align: center;
 }
 
-#intro {
-  margin-bottom: 50px;
-
-  h3 {
-    margin-bottom: 5px;
-
-    i {
-      font-size: 140%;
-    }
-
-    * {
-      vertical-align: middle;
-    }
-  }
-}
-
-#pickups {
-  margin-bottom: 50px;
-
-  ul {
-    list-style: none;
-    margin: 0 0 0 15px;
-
-    li {
-      margin-bottom: 10px;
-    }
-  }
-}
-
-#events-on-top, #users-on-top {
+#users-on-top, #tags-on-top, #effects-on-top {
   margin-bottom: 50px;
 }
 

@@ -1,0 +1,6 @@
+- count = tag.effects.count
+- if count > 0
+  = link_to tag, :class => "tag-link", :title => "#{count}個のエフェクトがあります" do
+    %i.icon-tag
+    = "%s (%d)" % [tag.name, count]
+
