@@ -20,6 +20,8 @@ class EffectsController < ApplicationController
     @effect = Effect.new
     @tag    = params[:tag]
 
+    @hide_new_effect_button = true
+
     @title = "エフェクトを登録する"
   end
 
