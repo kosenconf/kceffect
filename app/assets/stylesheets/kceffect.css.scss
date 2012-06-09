@@ -12,6 +12,50 @@ h3 {
   margin-bottom: 15px;
 }
 
+.navbar {
+  h1 {
+    .brand {
+      padding: 11px 20px 9px;
+    }
+  }
+
+  .pull-right {
+    .dropdown-menu:after {
+      right: 25px;
+    }
+  }
+
+  .dropdown-menu.pull-right:after {
+    right: 25px;
+  }
+
+  .nav {
+    li {
+      a {
+        padding: 11px 10px 9px;
+      }
+
+      .btn-menu {
+        i {
+          font-size: 170%;
+          width: 0.9em;
+        }
+      }
+
+      .btn-new-effect {
+        font-size: 110%;
+        color: #fff;
+        padding: 5px 10px;
+      }
+
+      .btn-new-effect:hover {
+        background-color: #faa732;
+        background-image: none;
+      }
+    }
+  }
+}
+
 #main {
   margin-top: 70px;
 }
