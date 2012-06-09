@@ -1,3 +1,3 @@
 - size ||= 24
 
-= link_to user_icon(user, size), user, :class => "user-cube", :title => user.name
+= link_to user_icon(user, size), user, :class => "user-cube", :title => user.effects.size > 0 ? "#{user.name} (#{user.effects.size}個のエフェクト)" : user.name
