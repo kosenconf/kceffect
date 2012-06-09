@@ -9,7 +9,7 @@ class UsersController < ApplicationController
       Contribution.find_by_user_id_and_event_id(@user.id, e.id)
     }
 
-    @show_timeline = true
+    @show_timeline = true unless @effects.empty?
 
     @title = "#{@user.name}と高専カンファレンス"
   end

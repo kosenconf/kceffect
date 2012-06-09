@@ -5,8 +5,12 @@
 
   .row
     .span8
-      - @effects.each do |effect|
-        = render :partial => "effects/date_oriented", :as => :effect, :object => effect
+      - if @effects.empty?
+        .alert.alert-info
+          登録されているエフェクトは、まだありません。
+      - else
+        - @effects.each do |effect|
+          = render :partial => "effects/date_oriented", :as => :effect, :object => effect
 
     .span4
       %h3
