@@ -1,10 +1,6 @@
 - tag ||= nil
 
-.alert.alert-info
-  %h4
-    %i.icon-question-sign
-    エフェクトって？
-  あなたが書いたブログ記事の登録はもちろんのこと、他の誰かが書いた記事を読んで「影響を受けた！」「これを見て高専カンファレンスを知った！」なんてものも大歓迎です。ぜひ、どんな影響を受けたのか、一言を添えて載せてみてください。発表資料、発表の動画、ツイートなどなど… あなたと高専カンファレンスの間にあるものを、どんどん登録して共有してください！
+= render :partial => "introduction"
 
 = form_for effect, :html => { :class => "form-horizontal effect-form" } do |form|
   - if effect.errors.any?

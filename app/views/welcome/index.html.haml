@@ -34,130 +34,47 @@
           お知らせ
         \: 高専カンファレンスエフェクトは、2012年6月10日(日)のオープンを予定しています。それまでは、閲覧のみをお楽しみください！
 
+.row
+  .span12
+    #users-on-top
+      .user-icons
+        = render :partial => "users/cube", :as => :user, :collection => @users, :locals => { :size => 36 }
 
-#intro
+
+#effects-on-top
   .row
-    .span4
+    .span12
       %h3
         %i.icon-fire
-        このサイトは？
-      %p
-        これまでに開催された高専カンファレンスのまわりで起こったこと「エフェクト」を、みんなから集めてまとめあげていくサイトです。
-      %p
-        = link_to about_path do
-          %i.icon-question-sign
-          もっと詳しく
-
-    .span4
-      %h3
-        %i.icon-search
-        エフェクトを見る
-      %p
-        みんなから集まったエフェクトをまとめて見ることができます。エフェクトは「開催イベント」や「関わった人」や「タグ」で整理されています。
-      %p
-        = link_to effects_path do
-          %i.icon-fire
-          エフェクトの一覧を見る
-
-    .span4
-      %h3
-        %i.icon-pencil
-        エフェクトをのせる
-      %p
-        あなたが体感したエフェクトを、ぜひのせてみてください！他のみんなと共有して、よりよいエフェクトにつなげていきましょう。
-      %p
-        - if signed_in?
-          ページ右上の「メニュー」からどうぞ！
-        - else
-          -# = link_to sign_in_path do
-          -#   %i.icon-twitter-sign
-          -#   ユーザ登録してエフェクトをのせよう！
-          (準備中)
-
-#pickups
+        新着のエフェクト
+  = render :partial => "effects/introduction"
   .row
-    .span7
+    .span6
+      .effect-board-box
+        = render :partial => "effects/board", :as => :effect, :collection => @effects[0..2]
+    .span6
+      .effect-board-box
+        = render :partial => "effects/board", :as => :effect, :collection => @effects[3..5]
+
+#tags-on-top
+  .row
+    .span12
       %h3
-        %i.icon-film
-        2009年までのエフェクトをまとめた動画
-      :plain
-        <iframe width="540" height="304" src="http://www.youtube.com/embed/q-xrunaszlg" frameborder="0" allowfullscreen></iframe>
-      .caption
-        Edited by earth2001y
-    .span5
-      %h3
-        %i.icon-pushpin
-        ピックアップトピック
-      %p
-        高専カンファレンス史の中でも特徴的な「エフェクト」を生んだものを並べて紹介します。
-      %ul
-        %li
-          = link_to "http://www.manaslink.com/em/emkosen/em-kc/", :target => "_blank" do
-            %i.icon-external-link
-            EM高専カンファレンス | ManasLink - EM ONLINE
-          %ul
-            %li
-              高専カンファレンス発のフリーペーパー
-        %li
-          = link_to "http://atnd.org/events/10508", :target => "_blank" do
-            %i.icon-external-link
-            kosenconf Advent Calendar : 2010 : ATND
-          %ul
-            %li
-              高専をテーマにしたブログリレー企画 (2010年版)
-        %li
-          = link_to "http://atnd.org/events/22570", :target => "_blank" do
-            %i.icon-external-link
-            Kosen Advent Calendar 2011 : ATND
-          %ul
-            %li
-              高専をテーマにしたブログリレー企画 (2011年版)
-        %li
-          = link_to "http://www.flickr.com/groups/kosenconf/pool/", :target => "_blank" do
-            %i.icon-external-link
-            Flickr: The 高専カンファレンス Pool
-          %ul
-            %li
-              5000枚以上の写真が集まった共有フォトアルバム
+        %i.icon-tags
+        エフェクトに付けられたタグ
+      = render :partial => "tags/list", :as => :tag, :collection => @tags
 
 #events-on-top
   .row
     .span12
       %h3
         %i.icon-flag
-        最近の開催イベント
+        最近開催された高専カンファレンス
       .event-banner-box
         - @events.each_with_index do |event, index|
           = render :partial => "events/banner", :as => :event, :object => event, :locals => { :mode => index % 2 == 1 ? "right-side" : nil }
       .more-events
         = link_to events_path do
           %i.icon-flag
-          開催イベントの一覧を見る
+          高専カンファレンスの一覧を見る
 
-.row
-  .span8
-    #effects-on-top
-      %h3
-        %i.icon-fire
-        新着エフェクト
-      .effect-board-box
-        = render :partial => "effects/board", :as => :effect, :collection => @effects
-
-  .span4
-    #users-on-top
-      %h3
-        %i.icon-user
-        利用しているみなさん
-      .user-icons
-        = render :partial => "users/cube", :as => :user, :collection => @users, :locals => { :size => 36 }
-
-    #tags-on-top
-      %h3
-        %i.icon-tags
-        エフェクトに付けられたタグ
-      - @tags.each do |tag|
-        - count = tag.effects.count
-        - if count > 0
-          = link_to tag, :class => "tag-link", :title => "#{count}個のエフェクトがあります" do
-            %i.icon-tag
-            = "%s (%d)" % [tag.name, count]

@@ -91,5 +91,5 @@
         - if @social_footer
           = render :partial => "welcome/widgets"
         %p
-          = Time.now.year
-          Team KCEffect
+          = link_to about_path do
+            Team KCEffect
