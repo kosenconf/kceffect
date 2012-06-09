@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     icon_url      = auth["info"]["image"]
     profile       = auth["info"]["description"]
     access_token  = auth["credentials"]["token"]
-    access_secret = auth["credentials"]["token"]
+    access_secret = auth["credentials"]["secret"]
 
     user = User.find_by_twitter_id(twitter_id) || User.new
 

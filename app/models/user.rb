@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 class User < ActiveRecord::Base
   attr_accessible :profile
 
@@ -15,5 +16,21 @@ class User < ActiveRecord::Base
 
   def to_param
     self.name
+  end
+
+  def tweet(effect_url)
+    message = "エフェクトをのせました！ #kosenconf %s" % effect_url
+    puts message
+
+    begin
+      client = Twitter::Client.new(
+        :oauth_token        => access_token,
+        :oauth_token_secret => access_secret
+      )
+
+      client.update(message)
+    rescue => e
+      logger.error e.message
+    end
   end
 end

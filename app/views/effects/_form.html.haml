@@ -41,5 +41,11 @@
               = tag.name
     .form-actions
       = form.submit "保存する", :class => "btn"
+      - if effect.new_record?
+        .tweet-check
+          %label
+            = check_box_tag :twitter, "1", true
+            %span
+              Twitterにも投稿する
 
 = javascript_include_tag "effect-form"

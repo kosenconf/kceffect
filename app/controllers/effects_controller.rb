@@ -49,6 +49,10 @@ class EffectsController < ApplicationController
         tagging = Tagging.where(:tag_id => tag.id, :effect_id => @effect.id).first_or_create(:user_id => current_user.id)
       end
 
+      if params[:twitter]
+        @effect.user.tweet(url_for(@effect))
+      end
+
       redirect_to @effect
     else
       @title = "エフェクトを登録する"

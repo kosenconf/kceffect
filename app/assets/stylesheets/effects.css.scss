@@ -237,4 +237,17 @@
     background-color: #fff;
     border: 1px solid #ccc;
   }
+
+  .tweet-check {
+    display: inline;
+    padding-left: 20px;
+
+    label {
+      display: inline;
+
+      * {
+        vertical-align: middle;
+      }
+    }
+  }
 }
