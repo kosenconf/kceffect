@@ -9,19 +9,27 @@
     = render :partial => "board", :as => :effect, :object => @effect
 
   .span4
-    %h3
-      %i.icon-search
-      他のエフェクトも見てみよう
-    %ul
-      - if user.effects.count > 1
-        %li
-          = user_icon(user, 16)
-          = link_to "#{user.name}さんのエフェクト(#{user.effects.count}個)", user
-      - tags.order("category, name").each do |tag|
-        - if tag.effects.count > 1
+    .side
+      %h3
+        %i.icon-search
+        他のエフェクトも見てみよう
+      %ul.nav.nav-list
+        - if user.effects.count > 1
           %li
-            - if tag.event?
-              - event = tag.event
-              = link_to "「#{event.name}」に関連するエフェクト(#{tag.effects.count}個)", event
-            - else
-              = link_to "タグ「#{tag.name}」に関連するエフェクト(#{tag.effects.count}個)", tag
+            = user_icon(user, 16)
+            = link_to " #{user.name}さんのエフェクト(#{user.effects.count}個)", user
+        - if tags.size > 0
+          %li.nav-header
+            関連するタグ
+          - tags.order("category, name").each do |tag|
+            - if tag.effects.count > 1
+              - count = tag.effects.count
+              %li
+                = link_to tag, :class => "tag-link", :title => "#{count}個のエフェクトがあります" do
+                  - if event = tag.event
+                    %i.icon-flag
+                    = "%s (%d)" % [event.name, count]
+                  - else
+                    %i.icon-tag
+                    = "%s (%d)" % [tag.name, count]
+
