@@ -189,7 +189,7 @@ DEPENDENCIES
   omniauth
   omniauth-twitter
   pg
-  rails
+  rails (= 3.2.5)
   sass-rails
   settingslogic
   sqlite3
