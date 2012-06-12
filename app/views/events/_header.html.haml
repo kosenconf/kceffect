@@ -58,6 +58,6 @@
         (サインインすると、イベントの情報を編集できます)
 
     - if signed_in?
-      = link_to new_effect_path(:tag => event.label), :class => "btn btn-info" do
-        %i.icon-fire
-        このイベントに関するエフェクトを登録する
+      = link_to new_effect_path(:tag => event.label), :class => "btn btn-warning" do
+        %i.icon-pencil
+        このイベントについてのエフェクトをのせる
