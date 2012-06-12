@@ -5,20 +5,23 @@
     - user = effect.user
     = link_to user_icon(user, 36), user
     = link_to user.name, user
-    - if current_user == user
-      \/
-      = link_to "エフェクトを編集する", edit_effect_path(effect)
-    .date
-      %span.badge
-        %i.icon-calendar
-        = effect.effected_at.to_s(:ymd)
+    .control
+      - if effect.user == current_user
+        = link_to edit_effect_path(effect), :class => "link-to-edit", :title => "このエフェクトを編集する" do
+          %i.icon-edit
+      - if signed_in?
+        = link_to tags_edit_effect_path(effect), :class => "link-to-edit", :title => "タグを編集する" do
+          %i.icon-tag
+      = link_to effect, :class => "link-to-effect", :title => "このエフェクトのパーマリンク" do
+        %i.icon-fire
+
     - unless mode == "without-tags"
       .tags
+        %span.date.badge
+          %i.icon-calendar
+          = effect.effected_at.to_s(:ymd)
         = render :partial => "tags/label", :as => :tag, :collection => effect.tags.order("category, name")
-        - if signed_in?
-          = link_to tags_edit_effect_path(effect) do
-            %i.icon-tag
-            タグを編集する
+
   .body
     - if effect.comment.present?
       .comment
