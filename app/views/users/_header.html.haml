@@ -8,12 +8,17 @@
       %i.icon-twitter-sign
     .profile
       = user.profile
-    .stats
-      %i.icon-fire
-      = "登録エフェクト%d個" % user.effects.count
+    .links
+      = link_to user do
+        %i.icon-fire
+        = "登録エフェクト%d個" % user.effects.count
       \/
-      %i.icon-star
-      = "お気に入りエフェクト%d個" % user.favorites.count
-      \/
-      %i.icon-flag
-      = "関わった高専カンファレンス%d個 (参加%d、運営%d、発表%d、視聴%d、ドラ娘%d)" % [user.contributions.count, [:attendee, :staff, :talker, :watcher, :dorar].map { |role| user.contributions.where(role => true).count}].flatten
+
+      - text = "お気に入りエフェクト%d個" % user.favorites.count
+      - if user.favorites.empty?
+        %i.icon-star
+        = text
+      - else
+        = link_to favorites_user_path(user) do
+          %i.icon-star
+          = text

@@ -1,0 +1,16 @@
+.user-contributions
+  %h3
+    %i.icon-flag
+    関わったイベント
+  .stats
+    = "参加%d / 運営%d / 発表%d / 視聴%d / ドラ娘%d" % [:attendee, :staff, :talker, :watcher, :dorar].map { |role| user.contributions.where(role => true).count}
+  - if contributions.empty?
+    - if user == current_user
+      .alert.alert-info
+        = link_to "開催イベントの一覧", events_path
+        からあなたが関わったイベントを見つけて、どんな関わり方をしたのか登録しよう！
+    - else
+      %p
+        まだ、登録されていません。
+  - else
+    = render :partial => "contributions/line", :as => :contribution, :collection => contributions
