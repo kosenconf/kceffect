@@ -69,6 +69,16 @@
   margin-bottom: 25px;
 }
 
+#users-on-top {
+  .user-icons {
+    .user-cube {
+      img {
+        margin: 0 2px 5px 0;
+      }
+    }
+  }
+}
+
 #events-on-top {
   position: relative;
 
