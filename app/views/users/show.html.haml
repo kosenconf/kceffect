@@ -13,16 +13,4 @@
           = render :partial => "effects/date_oriented", :as => :effect, :object => effect
 
     .span4
-      %h3
-        %i.icon-flag
-        関わった高専カンファレンス
-      - if @contributions.empty?
-        - if @user == current_user
-          .alert.alert-info
-            = link_to "開催イベントの一覧", events_path
-            からあなたが関わったイベントを見つけて、どんな関わり方をしたのか登録しよう！
-        - else
-          %p
-            まだ、登録されていません。
-      - else
-        = render :partial => "contributions/line", :as => :contribution, :collection => @contributions
+      = render :partial => "users/contributions", :as => :user, :object => @user, :locals => { :contributions => @contributions }

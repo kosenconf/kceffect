@@ -8,23 +8,8 @@
       %h3
         %i.icon-star
         お気に入りエフェクト
-      - if @favorites.empty?
-        まだ、お気に入り登録されているエフェクトはありません。
-      - else
-        = render :partial => "effects/board", :as => :effect, :collection => @favorites.map(&:effect)
+      = render :partial => "effects/board", :as => :effect, :collection => @favorites.map(&:effect)
       = paginate @favorites
 
   .span4
-    %h3
-      %i.icon-flag
-      関わったイベント
-    - if @contributions.empty?
-      - if @user == current_user
-        .alert.alert-info
-          = link_to "開催イベントの一覧", events_path
-          からあなたが関わったイベントを見つけて、どんな関わり方をしたのか登録しよう！
-      - else
-        %p
-          まだ、登録されていません。
-    - else
-      = render :partial => "contributions/line", :as => :contribution, :collection => @contributions
+    = render :partial => "users/contributions", :as => :user, :object => @user, :locals => { :contributions => @contributions }
