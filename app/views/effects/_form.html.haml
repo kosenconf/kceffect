@@ -13,19 +13,19 @@
   %fieldset
     .control-group
       %label.control-label
-        URL (必須)
+        ひとこと
       .controls
-        = form.text_field :url, :class => "span6"
+        = form.text_field :comment, :class => "span6", :placeholder => "あなたが受けた影響や強く感じたこと"
     .control-group
       %label.control-label
-        一言
+        URL
       .controls
-        = form.text_field :comment, :class => "span6"
+        = form.text_field :url, :class => "span6", :placeholder => "その影響につながるページのURL"
     .control-group
       %label.control-label
         いつのこと？
       .controls
-        = form.datetime_select :effected_at, { :default => Time.now.beginning_of_day, :use_month_numbers => true }, :class => "span2"
+        = form.datetime_select :effected_at, { :default => Time.now.beginning_of_day, :use_month_numbers => true }, :class => "span1"
         %p.help-block
           詳細な時刻まで入力する必要はありませんが、ユーザページでは、このデータの新しいものから順にエフェクトが表示されます。
     .control-group
