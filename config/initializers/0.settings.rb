@@ -13,5 +13,5 @@ if Settings.twitter.consumer_secret == "dummy"
 end
 
 if Settings.embedly.api_key == "dummy"
-  Settings.embedly["api_key"] == ENV["EMBEDLY_API_KEY"]
+  Settings.embedly["api_key"] = ENV["EMBEDLY_API_KEY"]
 end
