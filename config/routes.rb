@@ -20,6 +20,7 @@ Kceffect::Application.routes.draw do
   delete "/sessions",              :to => "sessions#destroy", :as => "sign_out"
 
   get  "/about", :to => "welcome#about", :as => "about"
+  get  "/feed", :to => "effects#feed", :as => :feed, :defaults => { :format => "rss" }
 
   root :to => "welcome#index"
 end
