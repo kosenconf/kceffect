@@ -8,6 +8,7 @@
     %title
       = title
     = stylesheet_link_tag    "application", :media => "all"
+    = auto_discovery_link_tag :rss, "/feed"
     = javascript_include_tag "application"
     %script{ :type => "text/javascript", :src => "http://s.hatena.ne.jp/js/HatenaStar.js" }
     :javascript
@@ -72,7 +73,7 @@
                       開催情報を登録する
                   %li.divider
                   %li
-                    = link_to sign_out_path, :method => :delete, do
+                    = link_to sign_out_path, :method => :delete do
                       %i.icon-signout
                       サインアウトする
           - else
