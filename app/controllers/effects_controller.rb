@@ -95,4 +95,12 @@ class EffectsController < ApplicationController
 
     @title = "エフェクトのタグを編集する"
   end
+
+  def feed
+    @effects = Effect.order('created_at DESC').limit(20)
+    respond_to do |format|
+      format.rss { render :layout => false }
+    end
+  end
+
 end
