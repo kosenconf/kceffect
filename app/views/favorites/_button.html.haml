@@ -6,5 +6,6 @@
     - else
       = render :partial => "favorites/fav", :as => :effect, :object => effect, :formats => :html, :handlers => :haml
   - else
-    %span.link-to-favorite{ :title => "サインインすると、エフェクトをお気に入り登録できるようになります" }
-      %i.icon-star-empty
+    = link_to sign_in_path do
+      %span.link-to-favorite{ :title => "サインインすると、エフェクトをお気に入り登録できるようになります" }
+        %i.icon-star-empty
