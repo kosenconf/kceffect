@@ -32,16 +32,16 @@
 
     callback(result)
 
-$(".new_tagging").live "ajax:success", (event, data) ->
+$(document).on "ajax:success", ".new_tagging", (event, data) ->
   form = $(data.form)
   tag  = $(data.tag).hide()
   $(this).replaceWith(form)
   tag.prependTo($(".tags")).fadeIn(1000)
 
-$(".link-to-delete-tagging").live "ajax:success", (event, data) ->
+$(document).on "ajax:success", ".link-to-delete-tagging", (event, data) ->
   $(this).fadeOut(1000)
 
-$(".link-to-favorite, .link-to-unfavorite").live "ajax:success", (event, data) ->
+$(document).on "ajax:success", ".link-to-favorite, .link-to-unfavorite", (event, data) ->
   $(".tooltip").hide()
   icons = $(this).parent().parent().children(".icons")
   html  = $(data.html)
@@ -51,6 +51,6 @@ $(".link-to-favorite, .link-to-unfavorite").live "ajax:success", (event, data) -
 $(document).ready ->
   $.embedly.defaults["key"] = embedlyApiKey;
 
-  $(".user-cube, .tag-link").tooltip()
-  $(".link-to-effect, .link-to-edit").tooltip({ placement: "top" })
-  $(".link-to-favorite, .link-to-unfavorite").tooltip({ placement: "left" })
+  $("body").tooltip {
+    selector: ".user-cube, .tag-link, .link-to-effect, .link-to-edit, .link-to-favorite, .link-to-unfavorite"
+  }
