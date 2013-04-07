@@ -15,20 +15,26 @@
 
 body {
   background-color: #f4f4f4;
+  font-size: 13px;
 }
 
 h3 {
-  margin-bottom: 15px;
+  margin: 0 0 15px;
+  font-size: 18px;
 }
 
 .navbar {
-  h1 {
-    .brand {
-      padding: 11px 20px 9px;
-    }
+  .navbar-inner {
+    padding: 0 0 2px;
   }
 
   .pull-right {
+    .dropdown {
+      .btn-menu {
+        font-size: 8px;
+      }
+    }
+
     .dropdown-menu:after {
       right: 25px;
     }

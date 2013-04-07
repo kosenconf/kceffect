@@ -1,12 +1,13 @@
 source :rubygems
 
-gem "rails", '3.2.5'
+gem "rails", "3.2.13"
 
 gem "jquery-rails"
 gem "haml-rails"
 gem "underscore-rails"
-gem "twitter-bootstrap-rails"
 gem "font-awesome-rails"
+gem "less-rails-bootstrap"
+gem "therubyracer"
 
 gem "kaminari"
 gem "i18n_generators"
