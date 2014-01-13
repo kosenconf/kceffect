@@ -29,7 +29,7 @@
                   = link_to event.name, event
           .span4
             %ul.nav.nav-list
-              - [2012, 2013].each do |year|
+              - [2012, 2013, 2014].each do |year|
                 %li.nav-header
                   = year
                 - @events.select { |event| event.start_at.year == year }.each do |event|
