@@ -8,7 +8,7 @@ gem "jquery-rails"
 gem "haml-rails"
 gem "underscore-rails"
 gem "font-awesome-rails"
-gem "less-rails-bootstrap"
+gem "bootstrap"
 gem "therubyracer"
 
 gem "kaminari"

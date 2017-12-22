@@ -39,6 +39,12 @@ GEM
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
     arel (6.0.4)
+    autoprefixer-rails (7.2.3)
+      execjs
+    bootstrap (4.0.0.beta2.1)
+      autoprefixer-rails (>= 6.0.3)
+      popper_js (>= 1.12.3, < 2)
+      sass (>= 3.5.2)
     buftok (0.2.0)
     builder (3.2.3)
     coderay (1.1.2)
@@ -49,7 +55,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
-    commonjs (0.2.7)
     concurrent-ruby (1.0.5)
     crass (1.0.3)
     domain_name (0.5.20170404)
@@ -107,15 +112,6 @@ GEM
       kaminari-core (= 1.1.1)
     kaminari-core (1.1.1)
     kgio (2.11.1)
-    less (2.6.0)
-      commonjs (~> 0.2.7)
-    less-rails (2.8.0)
-      actionpack (>= 4.0)
-      less (~> 2.6.0)
-      sprockets (> 2, < 4)
-      tilt
-    less-rails-bootstrap (3.3.5.0)
-      less-rails (>= 2.6, <= 2.8)
     libv8 (3.16.14.19)
     loofah (2.1.1)
       crass (~> 1.0.2)
@@ -143,6 +139,7 @@ GEM
       omniauth-oauth (~> 1.1)
       rack
     pg (0.21.0)
+    popper_js (1.12.9)
     pry (0.11.3)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
@@ -239,13 +236,13 @@ PLATFORMS
 
 DEPENDENCIES
   active_decorator
+  bootstrap
   coffee-rails
   font-awesome-rails
   haml-rails
   i18n_generators
   jquery-rails
   kaminari
-  less-rails-bootstrap
   omniauth
   omniauth-twitter
   pg
