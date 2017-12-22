@@ -51,10 +51,10 @@ ActiveRecord::Schema.define(:version => 20120605025802) do
     t.datetime "start_at",                             :null => false
     t.datetime "end_at",                               :null => false
     t.string   "cover_url"
-    t.datetime "created_at",                           :null => false
-    t.datetime "updated_at",                           :null => false
     t.string   "cover_original_url"
     t.string   "cover_original_author"
+    t.datetime "created_at",                           :null => false
+    t.datetime "updated_at",                           :null => false
   end
 
   add_index "events", ["end_at"], :name => "index_events_on_end_at"
