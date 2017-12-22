@@ -1,6 +1,4 @@
 class Tag < ActiveRecord::Base
-  attr_accessible :name, :category
-
   validates :name, :presence => true, :uniqueness => true
 
   has_many :taggings

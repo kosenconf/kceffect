@@ -2,8 +2,6 @@
 class Contribution < ActiveRecord::Base
   KINDS = [:attendee, :staff, :talker, :watcher, :dorar]
 
-  attr_accessible :attendee, :dorar, :event_id, :staff, :talker, :user_id, :watcher
-
   validates :user_id,  :presence => true
   validates :event_id, :presence => true
 

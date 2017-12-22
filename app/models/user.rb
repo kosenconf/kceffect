@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 class User < ActiveRecord::Base
-  attr_accessible :profile
-
   validates :name, :presence => true, :uniqueness => true, :format => { :with => /\A[A-Za-z0-9_]+\z/ }, :length => { :in => 2..50 }
   validates :icon_url,      :presence => true
   validates :twitter_id,    :presence => true
