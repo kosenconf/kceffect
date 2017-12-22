@@ -24,8 +24,10 @@ class User < ActiveRecord::Base
 
     begin
       client = Twitter::Client.new(
-        :oauth_token        => access_token,
-        :oauth_token_secret => access_secret
+        consumer_key:       Settings.twitter.consumer_key,
+        consumer_secret:    Settings.twitter.consumer_secret,
+        oauth_token:        access_token,
+        oauth_token_secret: access_secret
       )
 
       client.update(message)
