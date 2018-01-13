@@ -4,7 +4,7 @@ class Tag < ActiveRecord::Base
   has_many :taggings
   has_many :effects, :through => :taggings
 
-  scope :event, where(:category => "event")
+  scope :event, -> { where(:category => "event") }
 
   def to_param
     self.name
